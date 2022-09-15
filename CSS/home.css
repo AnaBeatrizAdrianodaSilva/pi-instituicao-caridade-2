@@ -1,7 +1,8 @@
 /* VARIÁVEIS */
 
 :root {
-    --font-menu: 'Kumbh Sans', sans-serif;;
+    --font-menu: 'Kumbh Sans', sans-serif;
+    --font-padrao: 'Mulish', sans-serif;
 }
 
 /* CONFIG GLOBAIS */
@@ -11,6 +12,7 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
+    font-family: var(--font-padrao);
 }
 
 html {
@@ -22,16 +24,11 @@ body {
 }
 
 img {
-    width: 128px;
-    height: 128px;
+    width: 150px;
+    height: 150px;
 }
 
 /* HEADER */
-/* 
-.cabeca {
-    position: absolute;
-    z-index: 100;
-} */
 
 .cabeca nav {
     display: flex;
@@ -67,4 +64,45 @@ img {
     position: absolute;
     top: 0;
     z-index: -10;
-}   
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user img {
+    width: 520px;
+    height: 520px;
+}
+
+.login section {
+    margin-top: 80px;
+}
+
+.login section h2 {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2em;
+}
+
+.login section a {
+    background-color: black;
+    font-size: 1.3em;
+    text-decoration: none;
+
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.login section a:hover {
+    opacity: .8;
+}
+
+/* ONDA1 */
+
+#onda1 {
+
+}
