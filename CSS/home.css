@@ -23,7 +23,7 @@ body {
     font-size: 1.6rem;
 }
 
-img {
+.logo {
     width: 150px;
     height: 150px;
 }
@@ -71,7 +71,7 @@ img {
     align-items: center;
 }
 
-.user img {
+.user .imgUser {
     width: 520px;
     height: 520px;
 }
@@ -104,7 +104,7 @@ img {
     cursor: pointer;
 }
 
-/* ONDA1 */
+/* ONDA 1 e ONDA 2 */
 
 #onda1 {
     margin-top: 400px;
@@ -142,4 +142,53 @@ img {
     /* font-weight: bold; */
     text-align: center;
     width: 600px;
+}
+
+/* DESENVOLVEDORES */
+
+.devs {
+    background-color: #5158FF;
+    width: 100%;
+    height: 3000px;
+
+    position: absolute;
+    top: 2740px;
+    z-index: -10;
+}
+
+.devs h2 {
+    margin-top: 150px;
+}
+
+.quadraoDevs {
+    width: 500px;
+    height: 500px;
+}
+
+.fotoDevs {
+   width: 250px;
+   height: 250px;
+   border-radius: 50%;
+}
+
+.devsTop {
+    margin-top: 700px;
+}
+
+.quadrados {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fotos {
+    position: absolute;
+    top: 955px;
+}
+
+.fotos {
+    margin-left: 340px;
+}
+
+.fotoDireita {
+    margin-left: 680px;
 }
