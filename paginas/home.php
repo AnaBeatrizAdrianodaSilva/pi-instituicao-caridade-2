@@ -87,11 +87,124 @@
 
         <h2>DESENVOLVEDORES</h2>
 
-        <section class="devsTop">
+        <section class='devsTop'>
 
-            <!-- MOLDURA DA FOTO DOS DESENVOLVEDORES -->
+            <figure>
+                <svg width="560" height="560" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_0_138)">
+                    <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M354.117 117.16L543.238 312.826" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M312.937 116.441L117.17 305.659" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M116.433 346.893L305.554 542.559" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M137.427 326.618L96.9238 284.712L55.002 325.232L95.5056 367.137L137.427 326.618Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M604.7 334.474L564.196 292.568L522.274 333.088L562.778 374.993L604.7 334.474Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M367.015 564.207L326.512 522.302L284.59 562.821L325.094 604.727L367.015 564.207Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_0_138">
+                    <rect x="335.553" width="466.492" height="466.675" transform="rotate(45.9745 335.553 0)" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
 
-            <section class='quadrados'>
+                <figcaption>
+                    <p>Maki</p>
+                </figcaption>
+
+            </figure>
+
+            <figure>
+                <svg width="560" height="560" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_0_138)">
+                    <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M354.117 117.16L543.238 312.826" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M312.937 116.441L117.17 305.659" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M116.433 346.893L305.554 542.559" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M137.427 326.618L96.9238 284.712L55.002 325.232L95.5056 367.137L137.427 326.618Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M604.7 334.474L564.196 292.568L522.274 333.088L562.778 374.993L604.7 334.474Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M367.015 564.207L326.512 522.302L284.59 562.821L325.094 604.727L367.015 564.207Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_0_138">
+                    <rect x="335.553" width="466.492" height="466.675" transform="rotate(45.9745 335.553 0)" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+
+                
+                <figcaption>
+                    <p>Maki</p>
+                </figcaption>
+            
+            </figure>
+
+            <img src="../img2/maki.png" alt="" id='dev1'>
+            <img src="../img2/maki.png" alt="" id='dev2'>
+
+        </section>
+    
+        <section class="devsMid">
+
+        <figure>
+                <svg width="560" height="560" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_0_138)">
+                    <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M354.117 117.16L543.238 312.826" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M312.937 116.441L117.17 305.659" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M116.433 346.893L305.554 542.559" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M137.427 326.618L96.9238 284.712L55.002 325.232L95.5056 367.137L137.427 326.618Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M604.7 334.474L564.196 292.568L522.274 333.088L562.778 374.993L604.7 334.474Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M367.015 564.207L326.512 522.302L284.59 562.821L325.094 604.727L367.015 564.207Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_0_138">
+                    <rect x="335.553" width="466.492" height="466.675" transform="rotate(45.9745 335.553 0)" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+
+                <figcaption>
+                    <p>Maki</p>
+                </figcaption>
+
+            </figure>
+
+            <figure>
+                <svg width="560" height="560" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_0_138)">
+                    <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M354.117 117.16L543.238 312.826" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M312.937 116.441L117.17 305.659" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M116.433 346.893L305.554 542.559" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M137.427 326.618L96.9238 284.712L55.002 325.232L95.5056 367.137L137.427 326.618Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M604.7 334.474L564.196 292.568L522.274 333.088L562.778 374.993L604.7 334.474Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M367.015 564.207L326.512 522.302L284.59 562.821L325.094 604.727L367.015 564.207Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                    <clipPath id="clip0_0_138">
+                    <rect x="335.553" width="466.492" height="466.675" transform="rotate(45.9745 335.553 0)" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+
+                
+                <figcaption>
+                    <p>Maki</p>
+                </figcaption>
+            
+            </figure>
+
+            <img src="../img2/maki.png" alt="" id='dev3'>
+            <img src="../img2/maki.png" alt="" id='dev4'>
+
+        </section>
+
+        <section class="devsBot">
+            <figure>
                     <svg width="560" height="560" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_0_138)">
                         <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -109,39 +222,15 @@
                         </clipPath>
                         </defs>
                     </svg>
-        
+
                     
-                    <svg width="560" height="560" viewBox="0 0 660 660" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_0_138)">
-                            <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M354.117 117.16L543.238 312.826" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M312.937 116.441L117.17 305.659" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M116.433 346.893L305.554 542.559" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M137.427 326.618L96.9238 284.712L55.002 325.232L95.5056 367.137L137.427 326.618Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M604.7 334.474L564.196 292.568L522.274 333.088L562.778 374.993L604.7 334.474Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M367.015 564.207L326.512 522.302L284.59 562.821L325.094 604.727L367.015 564.207Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_0_138">
-                                <rect x="335.553" width="466.492" height="466.675" transform="rotate(45.9745 335.553 0)" fill="white"/>
-                            </clipPath>
-                        </defs>
-                </svg>
-            </section>
-        
-        <section class='fotos'>
-            <img src="../img2/maki.png" alt="" class='fotoDevs'>
-            <img src="../img2/maki.png" alt="" class='fotoDevs fotoDireita'>
-        </section>
-    </section>
-    
-        <section class="devsMid">
+                    <figcaption>
+                        <p>Maki</p>
+                    </figcaption>
+                
+                </figure>
 
-        </section>
-
-        <section class="devsBot">
-
+                <img src="../img2/maki.png" alt="" id='dev5'>
         </section>
     </section>
 

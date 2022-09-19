@@ -135,6 +135,7 @@ body {
 
 .sobre h2 {
     font-weight: bolder;
+    font-size: 2.5em;
 }
 
 .sobre p {
@@ -157,38 +158,78 @@ body {
 }
 
 .devs h2 {
-    margin-top: 150px;
+    font-size: 2.5em;
+    margin-top: 500px;
+    margin-left: 750px;
 }
 
-.quadraoDevs {
-    width: 500px;
-    height: 500px;
+.devs img {
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
 }
 
-.fotoDevs {
-   width: 250px;
-   height: 250px;
-   border-radius: 50%;
+.devs figure figcaption p {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.9em;
+    margin-top: 8px;
 }
+
+/* DEVS TOP */
 
 .devsTop {
-    margin-top: 700px;
-}
-
-.quadrados {
+    width: 100%;
+    margin-top: 150px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.fotos {
+
+.devsTop #dev1 {
     position: absolute;
-    top: 955px;
+    top: 855px;
+    left: 155px;
 }
 
-.fotos {
-    margin-left: 340px;
+.devsTop #dev2 {
+    position: absolute;
+    top: 855px;
+    left: 1460px;
 }
 
-.fotoDireita {
-    margin-left: 680px;
+/* DEVS MID */
+
+.devsMid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+.devsMid #dev3 {
+    position: absolute;
+    top: 1465px;
+    left: 403px;
+}
+
+.devsMid #dev4 {
+    position: absolute;
+    top: 1465px;
+    left: 1210px;
+}
+
+/* DEVS BOT */
+
+.devsBot {
+    text-align: center;
+}
+
+.devsBot #dev5 {
+    position: absolute;
+    top: 2078px;
+    left: 810px;
 }
