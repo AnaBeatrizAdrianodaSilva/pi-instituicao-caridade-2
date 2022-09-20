@@ -1,0 +1,164 @@
+/* Variaveis */
+
+:root {
+    /* primária */
+    --color-0: white;
+    --color-1: #262dda;
+    --color-2: #5158ff;
+    --color-3: #B4B4B4;
+    --color-4: #06282E;
+    /* secundária */
+    --color-5: #16193B;
+    --color-6: #C8C8C8;
+    --color-7: #BABCCC;
+    --color-8: #EFEFEF;
+    --color-9: black;
+}
+
+   /* Cofig Globais */
+
+   * {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:32px;
+    padding: 0;
+    margin: 0;
+    color: var(--color-5);
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-2);
+    background-position: center center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+    z-index: 1;
+}
+
+/* Formulário */
+
+.form {
+    background-color: #ffff;
+    width: 882px;
+    height: 660px;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+    padding-top:40px;
+    transition: all 0.5s ease;
+}
+h1{
+    font-size:48px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao {
+    width: 171px;
+    height: 66px;
+    border: none;
+    background-color: var(--color-1);
+    border-radius: 10px;
+    transition: all 0.5s ease;
+}
+.botao:hover{
+    background-color: var(--color-0);
+    transition: all 0.5s ease;
+    color: var(--color-9);
+    border-color: var(--color-);
+}
+
+
+input {
+    border: none;
+    background-color: var(--color-8);
+    border-radius: 108px;
+    width: 810px;
+    height:74px;
+    transition: all 0.5s ease   ;
+}
+
+.form label, input[type='submit'] {
+    float: left;
+    margin-left: 60px;
+    font-size:32px;
+}
+p{
+    font-size:24px;
+}
+a:hover{
+    color: var(--color-1);
+    transition: all 0.2s ease;
+}
+
+@media screen and (max-width:980px){
+
+    
+    .form{
+        width: 662px;
+        height: 404px;
+        transition: all 0.5s ease;
+        padding-top: 40px;
+    }
+
+    .botao {
+        width: 88px;
+        height: 36px;
+        transition: all 0.5s ease;
+    }
+
+    input {
+        border-radius: 108px;
+        width: 605px;
+        height: 38px;
+        transition: all 0.5s ease;
+    }
+    .form label, input[type='submit'] {
+        float: left;
+        margin-left: 30px;
+        font-size:16px;
+    }
+    p{
+        font-size: 12px;
+    }
+    h1{
+        font-size: 35px;
+    }
+    .espesifico{
+        font-size: 12px;
+    }
+    
+}
+@media screen and (max-width:644px){
+    .form{
+        width: 362px;
+        height: 404px;
+        transition: all 0.5s ease;
+        padding-top: 28px;
+    }
+
+    .botao {
+        width: 88px;
+        height: 36px;
+        transition: all 0.5s ease;
+    }
+
+    input {
+        border-radius: 108px;
+        width: 305px;
+        height: 38px;
+        transition: all 0.5s ease;
+    }
+    .form label, input[type='submit'] {
+        float: left;
+        margin-left: 30px;
+        font-size:16px;
+    }
+    p{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 28px;
+    }
+}
