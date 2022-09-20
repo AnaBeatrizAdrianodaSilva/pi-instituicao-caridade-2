@@ -21,6 +21,7 @@ html {
 
 body {
     font-size: 1.6rem;
+    background-color: #262DDA;
 }
 
 .logo {
@@ -95,8 +96,6 @@ body {
     margin-left: 20px;
     padding: 20px;
     border-radius: 10px;
-
-    z-index: 100;
 }
 
 .login section a:hover {
@@ -232,4 +231,19 @@ body {
     position: absolute;
     top: 2078px;
     left: 810px;
+}
+
+/* FOOTER */
+
+.rodape {
+    position: absolute;
+    top: 5350px;
+}
+
+.rodape p {
+    color: white;
+    font-weight: bolder;
+    position: absolute;
+    top: 200px;
+    left: 600px;
 }
