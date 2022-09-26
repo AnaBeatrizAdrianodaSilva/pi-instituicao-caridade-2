@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/styleHeader.css">
+
     <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
 
     <!-- FONTS -->
@@ -28,7 +29,7 @@
         <nav>
             <a href="#">Sobre</a>
 
-            <img src="../img2/logo.png" alt="Logo">
+            <img src="../img2/logo.png" alt="Logo" class='logo'>
 
             <a href="#">Desenvolvedores</a>
         </nav>
