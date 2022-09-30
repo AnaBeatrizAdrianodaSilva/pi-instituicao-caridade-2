@@ -240,7 +240,7 @@
             <rect y="238" width="1864" height="157" fill="#262DDA"/>
         </svg>
 
-        <p>&copy; Copyright Senac Joinville Técnico INFO</p>
+        <p id='conteudo'>&copy; Copyright Senac Joinville Técnico INFO</p>
 
     </footer>
 
