@@ -1,7 +1,14 @@
+/* VARIÁVEIS */
+
+:root {
+    --font-menu: 'Kumbh Sans', sans-serif;
+    --font-padrao: 'Mulish', sans-serif;
+}
+
 *{
     padding: 0;
     margin: 0;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: var(--font-padrao);
     box-sizing: border-box;
 }
 html{
@@ -42,7 +49,7 @@ img {
     color: white;  
     font-size: 1.4em;
     font-weight: bold;
-    font-family: var(--font-menu);
+    font-family: var(--font-padrao);
     text-decoration: none;
 }
 
@@ -395,7 +402,7 @@ footer p:nth-child(2){
 /* Teste footer */
 .rodape {
     background-color: var(--color-1);
-    font-family: var(--font-menu-footer);
+    font-family: var(--font-padrao);
     width: 100%;
     height: 470px;
 
@@ -408,7 +415,7 @@ footer p:nth-child(2){
 
 .rodape h1 {
     font-size: 27px;
-    font-family: var(--font-menu-footer);
+    font-family: var(--font-padrao);
     text-align: center;
     padding: 35px 0 0 0;
     color: var(--color-0);
@@ -589,7 +596,7 @@ footer p:nth-child(2){
 }
 
 .cabeca h1 {
-    font-family: var(--font-titulo);
+    font-family: var(--font-padrao);
 }
 
 .cabeca p {
@@ -609,13 +616,13 @@ footer p:nth-child(2){
 }
 
 .row h2 {
-    font-family: var(--font-titulo);
+    font-family: var(--font-padrao);
 }
 
 .row a {
     color: var(--color-1);
     text-decoration: none;
-    font-family: var(--font-links-footer);
+    font-family: var(--font-padrao);
     font-size: 19px;
 }
 
@@ -659,7 +666,7 @@ footer p:nth-child(2){
 .instituicoes h3 {
     text-align: center;
     font-size: 22px;
-    font-family: var(--font-titulo);
+    font-family: var(--font-padrao);
 }
 
 .instituicoes p {
