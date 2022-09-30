@@ -41,7 +41,7 @@
 
 ?>
 <?php
-    require("../templates/header.php");
+    require("../templates/headerResto.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
