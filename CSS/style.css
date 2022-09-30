@@ -11,9 +11,15 @@
     font-family: var(--font-padrao);
     box-sizing: border-box;
 }
+
 html{
     scroll-behavior: smooth;
 }
+
+body {
+    background-color: #262DDA;
+}
+
 .hero {
     height: 85vh;
     width: 100%;
@@ -21,6 +27,7 @@ html{
     background-size: cover;
     background-position: center;
 }
+
 img {
     width: 128px;
     height: 128px;
@@ -155,4 +162,3 @@ h5{
         height: 900px;
     }
 }
-

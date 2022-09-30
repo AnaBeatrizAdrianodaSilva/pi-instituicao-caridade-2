@@ -43,3 +43,17 @@
     text-decoration: underline;
     opacity: .7;
 }
+
+/* TROÇO PRETO (FUTURAMENTE UM BANNER) */
+
+.hero {
+    height: 85vh;
+    width: 100%;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+
+    position: absolute;
+    top: 0;
+    z-index: -10;
+}   
