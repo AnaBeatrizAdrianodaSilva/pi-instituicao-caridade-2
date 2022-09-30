@@ -24,12 +24,13 @@ body {
     background-color: #262DDA;
 }
 
+
+/* HEADER */
+
 .logo {
     width: 150px;
     height: 150px;
 }
-
-/* HEADER */
 
 .cabeca nav {
     display: flex;
@@ -240,7 +241,7 @@ body {
     top: 5350px;
 }
 
-.rodape p {
+.rodape #conteudo {
     color: white;
     font-weight: bolder;
     position: absolute;

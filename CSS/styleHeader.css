@@ -1,22 +1,8 @@
 /* Variaveis */
 
 :root {
-    /* Cores */
-        /* primária */
-    --color-0: white;
-    --color-1: #262dda;
-    --color-2: #5158FF;
-    --color-3: #B4B4B4;
-    --color-4: #06282E;
-        /* secundária */
-    --color-5: #16193B;
-    --color-6: #C8C8C8;
-    --color-7: #BABCCC;
-    --color-8: #EFEFEF;
-    --color-9: black;
-
-    /* Fonts */
-    --font-menu-footer: 'Ubuntu', sans-serif;
+    --font-menu: 'Kumbh Sans', sans-serif;
+    --font-padrao: 'Mulish', sans-serif;
 }
 
 /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap'); */
@@ -25,102 +11,35 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: 'Inter', sans-serif; */
-}
-
-header {
-    /* background-color: #24252a; */
-    /* background-color: var(--color-1); */
-    /* background-image:("../img2/Vector.png"); */
-    box-shadow: 0px 3px 10px #464646;
-   
+    font-family: var(--fot-padrao);
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
+    width: 150px;
+    height: 150px;
 }
 
-.nav-bar {
+.cabeca nav {
     display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 6rem;
-}
-
-.nav-list {
-    display: flex;
-    align-items: center;
-}
-
-.nav-list ul {
-    display: flex;
+    flex-direction: row;
     justify-content: center;
-    list-style: none;
-    color: var( --color-0);
+    align-items: center;
+    gap: 50px;
+
+    position: absolute;
+    top: 60px;
+    left: 700px;
 }
 
-
-.nav-item {
-    margin: 0 15px;
-    color: var( --color-0);
-}
-
-.nav-link {
-    font-family: var(--font-menu-footer);
-    color: var(--color-9);
-    font-size: 1.25rem;
-    font-weight: 400;
+.cabeca nav a {
+    color: white;  
+    font-size: 1.4em;
+    font-weight: bold;
+    font-family: var(--font-menu);
     text-decoration: none;
 }
 
-.nav-link:hover {
+.cabeca nav a:hover {
     text-decoration: underline;
-}
-
-.mobile-menu-icon {
-    display: none;
-}
-
-.mobile-menu {
-    display: none;
-}
-
-@media screen and (max-width: 730px) {
-    .nav-bar {
-        padding: 1.5rem 4rem;
-    }
-    .nav-item {
-        display: none;
-    }
-    .login-button {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-    .mobile-menu-icon button {
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
-    }
-    .mobile-menu ul {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-    .mobile-menu .nav-item {
-        display: block;
-        padding-top: 1.2rem;
-    }
-    .mobile-menu .login-button {
-        display: block;
-        padding: 1rem 2rem;
-    }
-    .mobile-menu .login-button button {
-        width: 100%;
-    }
-    .open {
-        display: block;
-    }
+    opacity: .7;
 }
