@@ -3,7 +3,7 @@
     include "../include/MySql.php";
 
     //variaveis
-    $email = $nome = $cpf = $senha = "";
+    $email = $nome = $cpf = $senha = $administrador = "";
     $emailErr = $nomeErr = $cpfErr = $senhaErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
@@ -27,6 +27,11 @@
         } else {
             $senha = test_input($_POST["senha"]);
         }
+        if (empty($_POST['administrador'])){
+            $administrador = false;
+        } else {
+            $administrador = true;
+        }
         //verificar se existe um usuario
         if ($email && $nome && $cpf && $senha){
             $sql = $pdo->prepare("SELECT * FROM cadastro WHERE email = ?");
@@ -34,9 +39,9 @@
                 if ($sql->rowCount() > 0){
                     $msgErr = "Usuário já cadastrado!";
                 }else{
-                    $sql = $pdo->prepare("INSERT INTO CADASTRO (codigo, nome, email, senha, cpf)
-                                          values (null, ?,?,?,?)");
-                    if ($sql->execute(array($nome, $email, md5($senha), $cpf))){
+                    $sql = $pdo->prepare("INSERT INTO CADASTRO (codigo, nome, email, senha, cpf, administrador)
+                                          values (null, ?,?,?,?,?)");
+                    if ($sql->execute(array($nome, $email, md5($senha), $cpf, $administrador))){
                         $msgErr = "Dados cadastrados com sucesso!";
                         header('location: login.php');
                     }else{
@@ -109,6 +114,8 @@
         <span class="obrigatorio">* <?php echo $senhaErr ?></span>
         <br>
         <br>
+        <input type="checkbox" name="administrador">
+        <label for="administrador">Administrador</label><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErr ?></span>
         <p>Já uma conta?<a href="login.php">Entre aqui</a></p>

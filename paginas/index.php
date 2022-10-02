@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">     
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio do João</title>
+    <title>Página principal</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
@@ -18,6 +21,11 @@
     <!-- font-family: 'Mulish', sans-serif; -->
 </head>
 <body>
+    <h2> 
+     Bem-vindo <?php echo $_SESSION['nome']?>
+    <br>
+    <!-- essa linha abaixo é para botar no header quando tiver pronto -->
+    Você é admin? <?php if ($_SESSION['administrador']==1) echo "<a href='cadInst.php'>Cadastre sua Instiuição</a>"; else echo "Não";?>
     <!-- hero section start -->
     <div class="hero" id="back">
         <div class="content">

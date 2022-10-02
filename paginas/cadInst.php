@@ -3,7 +3,7 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $nome = "";
+    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao =  "";
     $valor = 0;
 
     if (isset($_POST["submit"])){
@@ -18,26 +18,31 @@
                 $image = $_FILES['image']['tmp_name'];
                 $imgContent = file_get_contents($image);
 
-                if (isset($_POST['nome'])){
-                    $nome = $_POST['nome'];
+                if (isset($_POST['NomeInstituicao'])){
+                    $NomeInstituicao = $_POST['NomeInstituicao'];
                 } else {
-                    $nome = "";
+                    $NomeInstituicao = "";
+                }
+                if (isset($_POST['TipoInstituicao'])){
+                    $TipoInstituicao = $_POST['TipoInstituicao'];
+                } else {
+                    $TipoInstituicao = "";
+                }
+                if (isset($_POST['EmailInstituicao'])){
+                    $EmailInstituicao = $_POST['EmailInstituicao'];
+                } else {
+                    $EmailInstituicao = "";
                 }
                 if (isset($_POST['descricao'])){
                     $descricao = $_POST['descricao'];
                 } else {
                     $descricao = "";
                 }
-                if (isset($_POST['valor'])){
-                    $valor = $_POST['valor'];
-                } else {
-                    $valor = "";
-                }
 
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO PRODUTO (codProduto, nomeProduto, descProduto, valorProduto, imagem)
+                $sql = $pdo->prepare("INSERT INTO PRODUTO (NomeInstituicao, TipoInstituicao, EmailInstituicao, descricao, imagem)
                                       VALUES (null, ?,?,?,?)");
-                if ($sql->execute(array($nome, $descricao, $valor, $imgContent))){
+                if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao, $descricao, $imgContent))){
                     $msgErro = "Dados cadastrados com suscesso!";
                 } else {
                     $msgErro = "Dados não cadastrados!";
@@ -107,8 +112,11 @@
         <span class="obrigatorio">* <?php echo $senhaErr ?></span>
         <br>
         <br>
+        <label for="User">Imagem:</label>
+        <input class="botaoImg" type="file" name="image"/>
+        <br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
-        <span class="obrigatorio"><?php echo $msgErr ?></span>
+        <span class="obrigatorio"><?php echo $msgErro ?></span>
         <p>Já uma conta?<a href="login.php">Entre aqui</a></p>
     </form>
 </body>

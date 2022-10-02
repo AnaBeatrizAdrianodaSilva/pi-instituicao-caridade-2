@@ -4,6 +4,7 @@
 
     session_start();
     $_SESSION['nome'] = "";
+    $_SESSION['administrador'] = "";
 
     $email = $senha = "";
     $emailErr = $senhaErr = $msgErr = "";
@@ -30,6 +31,7 @@
             if (count($info) > 0) { 
                 foreach($info as $key => $values){
                     $_SESSION['nome'] = $values['nome'];
+                    $_SESSION['administrador'] = $values['administrador'];
                     
                 }
                 header('location:index.php');
@@ -86,7 +88,7 @@
 
         <input class="botao" type="submit" value="Entrar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErr ?></span>
-        <p>Não possui conta?<a href="cadastro.php">Usuario apenas</a> OU <a href="cadInst.php">Cadastro de Instituição</a></p>
+        <p>Não possui conta?<a href="cadastro.php">Cadastre-se</a></p>
     </form>
 </body>
 </html>
