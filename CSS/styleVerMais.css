@@ -23,3 +23,10 @@ body {
     font-size: 1.6rem;
     /* background-color: #262DDA; */
 }
+
+/* ONDA 1 */
+
+#onda1 {
+    position: absolute;
+    top: 610px;
+}
