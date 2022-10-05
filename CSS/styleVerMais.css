@@ -21,12 +21,55 @@ html {
 
 body {
     font-size: 1.6rem;
-    /* background-color: #262DDA; */
+    background-color: #FFF3CD;
 }
 
 /* ONDA 1 */
 
 #onda1 {
     position: absolute;
-    top: 610px;
+    top: 660px;
+}
+
+/* CATEGORIAS */
+
+.container {
+    background-color: #F2D17C;
+    width: 90%;
+    height: 700px;
+    margin-top: 750px;
+    margin-left: 110px;
+    border-radius: 27px;
+}
+
+.container h2 {
+    color: black;
+    font-size: 1.9em;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.container figure {
+    width: 300px;
+    padding: 30px;
+}
+
+.container figure a img {
+    width: 300px;
+    height: 300px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+
+.container figure figcaption p {
+    background-color: #262DDA;
+    width: 300px;
+    padding: 20px;
+}
+
+.categoria {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 100px;
 }

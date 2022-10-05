@@ -23,7 +23,7 @@
         require('../templates/header.php');
     ?>
 
-    <svg width="1864" height="414" viewBox="0 0 1864 414" fill="none" xmlns="http://www.w3.org/2000/svg" id='onda4'>
+    <svg viewBox="0 0 1864 414" fill="none" xmlns="http://www.w3.org/2000/svg" id='onda1'>
         <g clip-path="url(#clip0_22_40)">
             <path d="M0 367.171L62.1333 341.031C124.267 314.401 248.533 262.859 372.8 249.36C497.067 235.861 621.333 262.859 745.6 308.265C869.867 353.671 994.133 419.94 1118.4 412.945C1242.67 406.441 1366.93 327.901 1491.2 282.126C1615.47 235.861 1739.73 223.589 1801.87 216.594L1864 210.089V92.2784H1801.87C1739.73 92.2784 1615.47 92.2784 1491.2 92.2784C1366.93 92.2784 1242.67 92.2784 1118.4 92.2784C994.133 92.2784 869.867 92.2784 745.6 92.2784C621.333 92.2784 497.067 92.2784 372.8 92.2784C248.533 92.2784 124.267 92.2784 62.1333 92.2784H0V367.171Z" fill="#F2D17C"/>
             <path d="M0 126.8L34.5617 155.306C68.9939 183.386 138.506 241.039 207.111 240.719C276.105 241.039 345.617 183.386 414.222 178.048C483.216 172.709 552.728 217.551 621.333 252.036C690.327 285.88 759.839 309.369 828.444 320.366C897.438 331.79 966.95 331.79 1035.56 314.707C1104.55 297.625 1174.06 263.46 1242.67 223.636C1311.67 183.386 1381.17 138.544 1449.78 115.376C1518.78 92.6349 1588.28 92.6349 1656.89 109.717C1725.89 126.8 1795.39 160.965 1829.05 178.048L1864 195.13V58.4705H1829.43C1795 58.4705 1725.49 58.4705 1656.89 58.4705C1587.9 58.4705 1518.38 58.4705 1449.78 58.4705C1380.79 58.4705 1311.27 58.4705 1242.67 58.4705C1173.68 58.4705 1104.16 58.4705 1035.56 58.4705C966.562 58.4705 897.05 58.4705 828.444 58.4705C759.451 58.4705 689.939 58.4705 621.333 58.4705C552.339 58.4705 482.828 58.4705 414.222 58.4705C345.228 58.4705 275.717 58.4705 207.111 58.4705C138.117 58.4705 68.6056 58.4705 34.95 58.4705H0V126.8Z" fill="#E8BA44"/>
@@ -37,7 +37,30 @@
         </defs>
     </svg>
 
+    <section class="container">
+        <h2>Deficiência</h2>
+        
+        <section class="categoria">
+            <figure>
+                <a href=" https://casasandreluiz.org.br/" target="_blank">
+                    <img src="../img2/andreLuiz.png" alt="">
+                </a>
+                <figcaption>
+                    <p>O Centro Espírita Nosso Lar Casas André Luiz, foi fundado em 28 de janeiro de 1949. Instituição de caráter filantrópico, sem fins lucrativos que por orientação espiritual optou pelo atendimento gratuito a pessoas com deficiência intelectual.</p>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href=" https://casasandreluiz.org.br/" target="_blank">
+                    <img src="../img2/andreLuiz.png" alt="">
+                </a>
+                <figcaption>
+                    <p>O Centro Espírita Nosso Lar Casas André Luiz, foi fundado em 28 de janeiro de 1949. Instituição de caráter filantrópico, sem fins lucrativos que por orientação espiritual optou pelo atendimento gratuito a pessoas com deficiência intelectual.</p>
+                </figcaption>
+            </figure>
+        </section>
 
+    </section>
+ 
     <?php
         require('../templates/footer.php');
     ?>
