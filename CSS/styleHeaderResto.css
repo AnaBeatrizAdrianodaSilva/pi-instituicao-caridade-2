@@ -19,6 +19,10 @@
     height: 150px;
 }
 
+.cabeca {
+    position: relative;
+}
+
 .cabeca nav {
     display: flex;
     flex-direction: row;
