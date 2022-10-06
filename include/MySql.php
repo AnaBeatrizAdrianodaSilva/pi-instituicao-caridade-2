@@ -1,6 +1,6 @@
 <?php
     define('HOST', 'localhost');
-    define('PORT', '');// Porta do MySql
+    define('PORT', '3306');// Porta do MySql
     define('DB', ''); //aqui vai o nome do banco de dados
     define('USER', 'root');
     define('PASS', '');

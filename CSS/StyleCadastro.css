@@ -45,13 +45,23 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-    height: 660px;
+    height: 799px;
     margin: 100px auto;
     border-radius: 10px;
     text-align: center;
     padding-top:40px;
     transition: all 0.5s ease;
 }
+/* .formInstituição {
+    background-color: #ffff;
+    width: 882px;
+    height: 799px;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+    padding-top:40px;
+    transition: all 0.5s ease;
+} */
 h1{
     font-size:48px;
     font-family: var(--font-padrao);
@@ -164,4 +174,10 @@ a:hover{
     h1{
         font-size: 28px;
     }
+}
+.botaoImg{
+    padding: 25px;
+}
+.adm{
+    padding: 30px;
 }
