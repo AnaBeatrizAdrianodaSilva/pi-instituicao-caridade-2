@@ -3,7 +3,8 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao =  "";
+    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = "";
+    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = "";
     $valor = 0;
 
     if (isset($_POST["submit"])){
@@ -33,6 +34,11 @@
                 } else {
                     $EmailInstituicao = "";
                 }
+                if (isset($_POST['cnpj'])){
+                    $cnpj = $_POST['cnpj'];
+                } else {
+                    $cnpj = "";
+                }
                 if (isset($_POST['descricao'])){
                     $descricao = $_POST['descricao'];
                 } else {
@@ -40,7 +46,7 @@
                 }
 
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO PRODUTO (NomeInstituicao, TipoInstituicao, EmailInstituicao, descricao, imagem)
+                $sql = $pdo->prepare("INSERT INTO PRODUTO (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, descricao, imagem)
                                       VALUES (null, ?,?,?,?)");
                 if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao, $descricao, $imgContent))){
                     $msgErro = "Dados cadastrados com suscesso!";
@@ -86,35 +92,35 @@
 <body>
     <!-- <div class="container"> -->
     <form method="POST" action="" class="form">
-        <h1>Cadastra</h1>
+        <h1>Cadastro da Instituição</h1>
 
-        <label for="email">Nome Completo:</label>
+        <label for="email">Nome da Instituição:</label>
         <br>
-        <input type="text" name="nome" value="<?php echo $nome?>">
+        <input type="text" name="nome" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br>
 
         <label for="senha">Email:</label>
         <br>
-        <input type="text" name="email" value="<?php echo $email?>">
+        <input type="text" name="email" value="<?php echo $EmailInstituicao?>">
         <span class="obrigatorio">* <?php echo $emailErr ?></span>
         <br>
         
-        <label for="senha">CPF:</label>
+        <label for="senha">CNPJ:</label>
         <br>
-        <input type="text" name="cpf" value="<?php echo $cpf?>">
-        <span class="obrigatorio">* <?php echo $cpfErr ?></span>
+        <input type="text" name="cpf" value="<?php echo $cnpj?>">
+        <span class="obrigatorio">* <?php echo $cnpjErr ?></span>
         <br>
         
-        <label for="senha">Senha:</label>
+        <label for="senha">Descrição:</label>
         <br>
-        <input type="text" name="senha" value="<?php echo $senha?>">
-        <span class="obrigatorio">* <?php echo $senhaErr ?></span>
-        <br>
+        <input type="text" name="senha" value="<?php echo $descricao?>">
+        <span class="obrigatorio">* <?php echo $descricaoErr ?></span>
+        <br> 
         <br>
         <label for="User">Imagem:</label>
         <input class="botaoImg" type="file" name="image"/>
-        <br>
+        <br><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErro ?></span>
         <p>Já uma conta?<a href="login.php">Entre aqui</a></p>
