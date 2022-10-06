@@ -58,7 +58,29 @@
                 </figcaption>
             </figure>
         </section>
+    </section>
 
+    <section class="container" style="margin-top: 100px;"> <!-- STYLE SERVE PARA DAR UM ESPAÇAMENTO MENOR ENTRE OS CONTAINERS -->
+        <h2>Deficiência</h2>
+        
+        <section class="categoria">
+            <figure>
+                <a href=" https://casasandreluiz.org.br/" target="_blank">
+                    <img src="../img2/andreLuiz.png" alt="">
+                </a>
+                <figcaption>
+                    <p>O Centro Espírita Nosso Lar Casas André Luiz, foi fundado em 28 de janeiro de 1949. Instituição de caráter filantrópico, sem fins lucrativos que por orientação espiritual optou pelo atendimento gratuito a pessoas com deficiência intelectual.</p>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href=" https://casasandreluiz.org.br/" target="_blank">
+                    <img src="../img2/andreLuiz.png" alt="">
+                </a>
+                <figcaption>
+                    <p>O Centro Espírita Nosso Lar Casas André Luiz, foi fundado em 28 de janeiro de 1949. Instituição de caráter filantrópico, sem fins lucrativos que por orientação espiritual optou pelo atendimento gratuito a pessoas com deficiência intelectual.</p>
+                </figcaption>
+            </figure>
+        </section>
     </section>
  
     <?php
