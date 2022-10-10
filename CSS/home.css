@@ -158,96 +158,79 @@ body {
 .devs {
     background-color: #5158FF;
     width: 100%;
-    height: 3000px;
-
-    position: absolute;
-    top: 2740px;
-    z-index: -10;
+    height: 1600px;
+    /* z-index: -10; */
 }
 
 .devs h2 {
-    font-size: 2.5em;
-    margin-top: 500px;
-    margin-left: 750px;
-}
-
-.devs img {
-    width: 250px;
-    height: 250px;
-    border-radius: 100%;
-}
-
-.devs figure figcaption p {
     text-align: center;
-    font-weight: bolder;
-    font-size: 1.9em;
-    margin-top: 8px;
+    font-size: 2em;
+    padding-top: 70px;
 }
 
-/* DEVS TOP */
+/* TODAS AS SECTION LINHA */
 
-.devsTop {
+.devs-row {
     width: 100%;
-    margin-top: 150px;
+    height: 500px;
+    padding-left: 50px;
+}
+
+/* SECTION DEVS DO TOP */
+
+.devs-top {
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
 }
 
+/* SECTION DEVS DO MID */
 
-.devsTop #dev1 {
-    position: absolute;
-    top: 855px;
-    left: 155px;
-}
-
-.devsTop #dev2 {
-    position: absolute;
-    top: 855px;
-    left: 1460px;
-}
-
-/* DEVS MID */
-
-.devsMid {
+.devs-mid {
+    width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* SECTION DEVS DO BOT */
+
+.devs-bot {
+    width: 100%;
+    display: flex;
     align-items: center;
+    justify-content: center;
 }
 
+/* FUNDO DOS DEVS */
 
-.devsMid #dev3 {
-    position: absolute;
-    top: 1465px;
-    left: 403px;
+.devs .fundo {
+    background-image: url('../img2/fundoDevs.png');
+    background-size: 500px;
+    background-repeat: no-repeat;
+    width: 750px;
+    height: 750px;
 }
 
-.devsMid #dev4 {
-    position: absolute;
-    top: 1465px;
-    left: 1210px;
+/* IMAGEM DOS DEVS */
+
+.devs .fundo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 145px 0 0 150px;
 }
 
-/* DEVS BOT */
+/* NOME DOS DEVS */
 
-.devsBot {
-    text-align: center;
+.devs .fundo p {
+    color: white;
+    margin-top: 120px;
+    margin-left: 210px;
 }
-
-.devsBot #dev5 {
-    position: absolute;
-    top: 2078px;
-    left: 810px;
-}
-
-
-/* teste */
-.devs .imgvec{
-    height: 550px;
-    width: 550px;
- }
 
 /* FOOTER */
 
