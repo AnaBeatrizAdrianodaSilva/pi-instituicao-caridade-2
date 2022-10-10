@@ -377,7 +377,7 @@ body {
     .devs h2 {
         font-size: 2.5em;
         margin-top: 500px;
-        margin-left: 0;
+        margin-left: 800px;
     }
 
     .devs {
@@ -410,14 +410,14 @@ body {
 
 .devsTop #dev1 {
     position: absolute;
-    top: 855px;
+    top: 145px;
     left: 155px;    
 }
 
 .devsTop #dev2 {
     position: absolute;
-    top: 855px;
-    left: 0;
+    top: 750px;
+    left: 155px;
 }
 
 /* DEVS MID */
@@ -432,8 +432,8 @@ body {
 
 .devsMid #dev3 {
     position: absolute;
-    top: 1465px;
-
+    top: 2650px;
+    left: 155px;
 }
 
 .devsMid #dev4 {
@@ -450,8 +450,8 @@ body {
 
 .devsBot #dev5 {
     position: absolute;
-    top: 2078px;
-    left: 0;
+    top: 1978px;
+    left: 155px;
 }
 
 
