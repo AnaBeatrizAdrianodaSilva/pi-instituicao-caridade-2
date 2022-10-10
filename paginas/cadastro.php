@@ -114,8 +114,8 @@
         <span class="obrigatorio">* <?php echo $senhaErr ?></span>
         <br>
         <br>
-        <input type="checkbox" name="administrador">
-        <label for="administrador">Administrador</label><br>
+        <label for="administrador">Cadastrar sites:</label>
+        <input class="adm" type="checkbox" name="administrador">
         <input class="botao" type="submit" value="Salvar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErr ?></span>
         <p>Já uma conta?<a href="login.php">Entre aqui</a></p>
