@@ -211,7 +211,7 @@
                         <path d="M375.111 96.8846L334.607 54.9792L292.686 95.4987L333.189 137.404L375.111 96.8846Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M354.117 117.16L543.238 312.826" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M312.937 116.441L117.17 305.659" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M542.533 354.023L346.765 543.242" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/> 
                         <path d="M116.433 346.893L305.554 542.559" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M137.427 326.618L96.9238 284.712L55.002 325.232L95.5056 367.137L137.427 326.618Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M604.7 334.474L564.196 292.568L522.274 333.088L562.778 374.993L604.7 334.474Z" stroke="black" stroke-width="10" stroke-miterlimit="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -224,6 +224,7 @@
                         </defs>
                     </svg>
 
+                    <img src="../img2/maki.png" alt="" id='dev5'>
                     
                     <figcaption>
                         <p>Maki</p>
@@ -231,7 +232,6 @@
                 
                 </figure>
 
-                <img src="../img2/maki.png" alt="" id='dev5'>
         </section>
     </section>
 
