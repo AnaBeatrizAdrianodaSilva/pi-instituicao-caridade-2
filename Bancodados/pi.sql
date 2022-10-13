@@ -21,14 +21,14 @@ CREATE TABLE `cadastInst` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --------------Exemplo de alterar/AUTO_INCREMENT--------------
-ALTER TABLE `produto`
-  ADD PRIMARY KEY (`codProduto`);
+ALTER TABLE `cadasInst`
+  ADD PRIMARY KEY (`codInst`);
 
 --
 -- Índices para tabela `usuario`
 --
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`codigo`);
+ALTER TABLE `cadastro`
+  ADD PRIMARY KEY (`codigoUser`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -37,12 +37,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
-ALTER TABLE `produto`
-  MODIFY `codProduto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+ALTER TABLE `cadasInst`
+  MODIFY `codInst` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
-ALTER TABLE `usuario`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `cadastro`
+  MODIFY `codigoUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
