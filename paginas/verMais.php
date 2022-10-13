@@ -88,21 +88,22 @@
     ?>
 </body>
 </html>
-<!-- <?php
+<?php
+    include "../include/MySql.php";
     //Depois do FROM, falta o nome do banco de dados 
-    // $sql = $pdo->prepare("SELECT * FROM ");
-    // if ($sql->execute()){
-    //     $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+    $sql = $pdo->prepare("SELECT * FROM cadastinst ");
+    if ($sql->execute()){
+        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-    //     foreach($info as $key=>$values){
-    //         echo 'Codigo: '.$values['NomeInstituicao'].'<br>';
-    //         echo 'Nome: '.$values['TipoInstituicao'].'<br>';
-    //         echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
-    //         echo 'Valor: '.$values['descricao'].'<br>';
+        foreach($info as $key=>$values){
+            echo 'Codigo: '.$values['NomeInstituicao'].'<br>';
+            echo 'Nome: '.$values['TipoInstituicao'].'<br>';
+            echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
+            echo 'Valor: '.$values['descricao'].'<br>';
             
-    //         $Imagem = $values['Imagem'];
-    //         echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Imagem).'"/><br>';
-    //         echo '<hr>';
-    //     }
-    // }
-?> -->
+            $Imagem = $values['Imagem'];
+            echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Imagem).'"/><br>';
+            echo '<hr>';
+        }
+    }
+?>

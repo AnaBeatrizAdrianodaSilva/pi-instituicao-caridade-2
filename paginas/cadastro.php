@@ -39,7 +39,7 @@
                 if ($sql->rowCount() > 0){
                     $msgErr = "Usuário já cadastrado!";
                 }else{
-                    $sql = $pdo->prepare("INSERT INTO CADASTRO (codigo, nome, email, cpf, senha, administrador)
+                    $sql = $pdo->prepare("INSERT INTO CADASTRO (codigoUser, nome, email, cpf, senha, administrador)
                                           values (null, ?,?,?,?,?)");
                     if ($sql->execute(array($nome, $email, $cpf, md5($senha), $administrador))){
                         $msgErr = "Dados cadastrados com sucesso!";
