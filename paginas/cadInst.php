@@ -7,7 +7,8 @@
     $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = "";
     $valor = 0;
 
-    if (isset($_POST["submit"])){
+
+    if (isset($_POST["cadastro"])){
         if (!empty($_FILES["image"]["name"])){
             //Pegar informações
             $fileName = basename($_FILES["image"]["name"]);
@@ -44,21 +45,34 @@
                 } else {
                     $descricao = "";
                 }
+                if (isset($_POST['tipoInst'])){
+                    $tipoInst = $_POST['tipoInst'];
+                } else {
+                    $tipoInst = "";
+                }
 
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO PRODUTO (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, descricao, imagem)
-                                      VALUES (null, ?,?,?,?)");
-                if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao, $descricao, $imgContent))){
+                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, descricao, tipoInst, imagem)
+                                      VALUES (?,?,?,?,?,?,?)");
+                if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao,$cnpj, $descricao, $tipoInst, base64_encode($imgContent) ))){
                     $msgErro = "Dados cadastrados com suscesso!";
+                    echo $msgErro;
+                    die();
                 } else {
                     $msgErro = "Dados não cadastrados!";
+                    echo $msgErro;
+                    die();
                 }
 
             } else {
                 $msgErro = "Desculpe, mas somente arquivos JPG, JPEG, PNG e GIF são permitidos";
+                echo $msgErro;
+                    die();
             }
         } else {
             $msgErro = "Selecione uma imagem para upload";
+            echo $msgErro;
+                    die();
         }
     }
 
@@ -91,7 +105,7 @@
 
 <body>
     <!-- <div class="container"> -->
-    <form method="POST" action="" class="form">
+    <form method="POST" action="" class="form" enctype="multipart/form-data" >
         <h1>Cadastro da Instituição</h1>
 
         <label for="email">Nome da Instituição:</label>
@@ -115,9 +129,9 @@
         <label for="tipoInst">Tipo de Instituição:</label>
         <br>
         <select name="tipoInst" id="tipoInst">
-            <option value="tipoInst">Valor 1</option>
-            <option value="tipoInst" selected>Valor 2</option>
-            <option value="tipoInst">Valor 3</option>
+        <option value="tipoInst" selected>Selecione</option>
+            <option value="varlor_1">Valor 1</option>
+            <option value="varlor_2">Valor 3</option>
         </select>
         <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
         <br>

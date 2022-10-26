@@ -10,18 +10,19 @@ CREATE TABLE `cadastro` (
 
 ---------------------------
 
-CREATE TABLE `cadastInst` (
+CREATE TABLE `cadastinst` (
   `codInst` int(11) NOT NULL,
   `NomeInstituicao` varchar(255) NOT NULL,
   `TipoInstituicao` varchar(255) NOT NULL,
   `EmailInstituicao` varchar(255) NOT NULL,
   `cnpj` varchar(18) NOT NULL,
+  `tipoInst` varchar(255) NOT NULL,
   `descricao` text NOT NULL,
   `imagem` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --------------Exemplo de alterar/AUTO_INCREMENT--------------
-ALTER TABLE `cadasInst`
+ALTER TABLE `cadastinst`
   ADD PRIMARY KEY (`codInst`);
 
 --
@@ -37,7 +38,7 @@ ALTER TABLE `cadastro`
 --
 -- AUTO_INCREMENT de tabela `produto`
 --
-ALTER TABLE `cadasInst`
+ALTER TABLE `cadastinst`
   MODIFY `codInst` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --

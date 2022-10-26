@@ -88,7 +88,7 @@
     ?> -->
 </body>
 </html>
-<!-- <?php
+<?php
     include "../include/MySql.php";
     //Depois do FROM, falta o nome do banco de dados 
     $sql = $pdo->prepare("SELECT * FROM cadastinst ");
@@ -100,10 +100,12 @@
             echo 'Nome: '.$values['TipoInstituicao'].'<br>';
             echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
             echo 'Valor: '.$values['descricao'].'<br>';
-            
+            echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
+            echo 'tipoInst: '.$values['tipoInst']. '<br>';
+
             $Imagem = $values['Imagem'];
             echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Imagem).'"/><br>';
             echo '<hr>';
         }
     }
-?> -->
+?>
