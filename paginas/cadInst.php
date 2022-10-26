@@ -3,8 +3,8 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = "";
-    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = "";
+    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = $tipoInst = "";
+    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = "";
     $valor = 0;
 
     if (isset($_POST["submit"])){
@@ -112,6 +112,16 @@
         <span class="obrigatorio">* <?php echo $cnpjErr ?></span>
         <br>
         
+        <label for="tipoInst">Tipo de Instituição:</label>
+        <br>
+        <select name="tipoInst" id="tipoInst">
+            <option value="tipoInst">Valor 1</option>
+            <option value="tipoInst" selected>Valor 2</option>
+            <option value="tipoInst">Valor 3</option>
+        </select>
+        <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
+        <br>
+
         <label for="senha">Descrição:</label>
         <br>
         <input type="text" name="senha" value="<?php echo $descricao?>">
