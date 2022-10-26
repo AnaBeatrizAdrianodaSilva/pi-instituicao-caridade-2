@@ -22,6 +22,7 @@ html {
 body {
     font-size: 1.6rem;
     background-color: #FFF3CD;
+    /* background-color: black; */
 }
 
 /* ONDA 1 */
@@ -72,4 +73,19 @@ body {
     flex-direction: row;
     align-items: center;
     gap: 100px;
+}
+
+@media screen and (max-width:960px){
+    .a {
+        display: none;
+    }
+
+    .container {
+        background-color: #F2D17C;
+        width: 70%;
+        height: 670px;
+        margin-top: 750px;
+        margin-left: 110px;
+        border-radius: 27px;
+    }
 }
