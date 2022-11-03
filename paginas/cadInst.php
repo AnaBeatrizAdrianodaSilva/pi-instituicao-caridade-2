@@ -3,8 +3,8 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = $tipoInst = "";
-    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = "";
+    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $valor1 = $valor2 = "";
+    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $valor1Err = $valor2Err = "";
     $valor = 0;
 
 
@@ -50,7 +50,11 @@
                 } else {
                     $tipoInst = "";
                 }
-
+                if (isset($_POST['tipoInst'])){
+                    $tipoInst = $_POST['tipoInst'];
+                } else {
+                    $tipoInst = "";
+                }
                 //Gravar no banco
                 $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, descricao, tipoInst, imagem)
                                       VALUES (?,?,?,?,?,?,?)");
@@ -130,8 +134,8 @@
         <br>
         <select name="tipoInst" id="tipoInst">
         <option value="tipoInst" selected>Selecione</option>
-            <option value="varlor_1">Valor 1</option>
-            <option value="varlor_2">Valor 3</option>
+            <option value="varlor1">Valor 1</option>
+            <option value="varlor2">Valor 2</option>
         </select>
         <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
         <br>
