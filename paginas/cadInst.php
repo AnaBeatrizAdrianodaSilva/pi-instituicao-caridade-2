@@ -3,8 +3,8 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $valor1 = $valor2 = "";
-    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $valor1Err = $valor2Err = "";
+    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
+    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
     $valor = 0;
 
 
@@ -56,9 +56,9 @@
                     $tipoInst = "";
                 }
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, descricao, tipoInst, imagem)
+                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
                                       VALUES (?,?,?,?,?,?,?)");
-                if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao,$cnpj, $descricao, $tipoInst, base64_encode($imgContent) ))){
+                if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
                     $msgErro = "Dados cadastrados com suscesso!";
                     echo $msgErro;
                     die();
@@ -134,10 +134,11 @@
         <br>
         <select name="tipoInst" id="tipoInst">
         <option value="tipoInst" selected>Selecione</option>
-            <option value="varlor1">Valor 1</option>
-            <option value="varlor2">Valor 2</option>
+            <!-- <option value="ONGs">ONGs</option>
+            <option value="Instituição Governamental">Instituição Governamental</option>
+            <option value="Instituição Privada">Instituição Privada</option> -->
         </select>
-        <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
+        <!-- <span class="obrigatorio">* <?php echo $tipoInstErr ?></span> -->
         <br>
 
         <label for="senha">Descrição:</label>
