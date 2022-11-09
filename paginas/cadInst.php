@@ -3,7 +3,7 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $TipoInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
+    $descricao = $NomeInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
     $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
     $valor = 0;
 
@@ -24,11 +24,6 @@
                     $NomeInstituicao = $_POST['NomeInstituicao'];
                 } else {
                     $NomeInstituicao = "";
-                }
-                if (isset($_POST['TipoInstituicao'])){
-                    $TipoInstituicao = $_POST['TipoInstituicao'];
-                } else {
-                    $TipoInstituicao = "";
                 }
                 if (isset($_POST['EmailInstituicao'])){
                     $EmailInstituicao = $_POST['EmailInstituicao'];
@@ -52,9 +47,9 @@
                 }
               
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
-                                      VALUES (?,?,?,?,?,?,?)");
-                if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
+                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
+                                      VALUES (?,?,?,?,?,?)");
+                if ($sql->execute(array($NomeInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
                     $msgErro = "Dados cadastrados com suscesso!";
                     header('location: verMais.php');
                     echo $msgErro;
@@ -111,19 +106,19 @@
 
         <label for="email">Nome da Instituição:</label>
         <br>
-        <input type="text" name="nome" value="<?php echo $NomeInstituicao?>">
+        <input type="text" name="NomeInstituicao" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br>
 
         <label for="senha">Email:</label>
         <br>
-        <input type="text" name="email" value="<?php echo $EmailInstituicao?>">
+        <input type="text" name="EmailInstituicao" value="<?php echo $EmailInstituicao?>">
         <span class="obrigatorio">* <?php echo $emailErr ?></span>
         <br>
         
         <label for="senha">CNPJ:</label>
         <br>
-        <input type="text" name="cpf" value="<?php echo $cnpj?>">
+        <input type="text" name="cnpj" value="<?php echo $cnpj?>">
         <span class="obrigatorio">* <?php echo $cnpjErr ?></span>
         <br>
         
@@ -140,7 +135,7 @@
 
         <label for="senha">Descrição:</label>
         <br>
-        <input type="text" name="senha" value="<?php echo $descricao?>">
+        <input type="text" name="descricao" value="<?php echo $descricao?>">
         <span class="obrigatorio">* <?php echo $descricaoErr ?></span>
         <br> 
         <br>
