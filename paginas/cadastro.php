@@ -116,6 +116,7 @@
         <br>
         <label for="administrador">Cadastrar sites:</label>
         <input class="adm" type="checkbox" name="administrador">
+        <br><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErr ?></span>
         <p>Já uma conta?<a href="login.php">Entre aqui</a></p>
