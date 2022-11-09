@@ -110,7 +110,7 @@
         
         <label for="senha">Senha:</label>
         <br>
-        <input type="text" name="senha" value="<?php echo $senha?>">
+        <input type="password" name="senha" value="<?php echo $senha?>">
         <span class="obrigatorio">* <?php echo $senhaErr ?></span>
         <br>
         <br>
