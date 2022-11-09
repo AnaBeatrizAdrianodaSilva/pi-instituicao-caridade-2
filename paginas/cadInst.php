@@ -50,11 +50,7 @@
                 } else {
                     $tipoInst = "";
                 }
-                if (isset($_POST['tipoInst'])){
-                    $tipoInst = $_POST['tipoInst'];
-                } else {
-                    $tipoInst = "";
-                }
+              
                 //Gravar no banco
                 $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, TipoInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
                                       VALUES (?,?,?,?,?,?,?)");
@@ -134,11 +130,11 @@
         <br>
         <select name="tipoInst" id="tipoInst">
         <option value="tipoInst" selected>Selecione</option>
-            <!-- <option value="ONGs">ONGs</option>
+            <option value="ONGs">ONGs</option>
             <option value="Instituição Governamental">Instituição Governamental</option>
-            <option value="Instituição Privada">Instituição Privada</option> -->
+            <option value="Instituição Privada">Instituição Privada</option>
         </select>
-        <!-- <span class="obrigatorio">* <?php echo $tipoInstErr ?></span> -->
+        <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
         <br>
 
         <label for="senha">Descrição:</label>
