@@ -56,6 +56,7 @@
                                       VALUES (?,?,?,?,?,?,?)");
                 if ($sql->execute(array($NomeInstituicao, $TipoInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
                     $msgErro = "Dados cadastrados com suscesso!";
+                    header('location: verMais.php');
                     echo $msgErro;
                     die();
                 } else {
