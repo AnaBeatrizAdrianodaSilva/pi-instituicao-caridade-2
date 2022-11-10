@@ -85,8 +85,8 @@
 
                     </section>';
 
-                // echo 'Codigo: '.$values['NomeInstituicao'].'<br>';
-                // echo 'Nome: '.$values['NomeInstituicao'].'<br>';
+                    echo 'Endereço da Instituição: '.$values['LinkInstituicao'].'<br>';
+                //  echo 'Nome: '.$values['NomeInstituicao'].'<br>';
                 // echo 'Email: '.$values['EmailInstituicao'].'<br>';
                 // echo 'Descrição: '.$values['descricao'].'<br>';
                 // echo 'Valor: '.$values['descricao'].'<br>';

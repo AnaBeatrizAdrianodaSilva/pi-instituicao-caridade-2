@@ -3,27 +3,32 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = $image = "";
-    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
+    $descricao = $NomeInstituicao = $LinkInstituicao= $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = $imagem = "";
+    $nomeErr = $LinkInstituicaoErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = $imagemErr  = "";
     $valor = 0;
 
 
     if (isset($_POST["cadastro"])){
-        if (!empty($_FILES["image"]["name"])){
+        if (!empty($_FILES["imagem"]["name"])){
             //Pegar informações
-            $fileName = basename($_FILES["image"]["name"]);
+            $fileName = basename($_FILES["imagem"]["name"]);
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
             //Permitir somente alguns formatos
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
             if (in_array($fileType, $allowTypes)){
-                $image = $_FILES['image']['tmp_name'];
-                $imgContent = file_get_contents($image);
+                $imagem = $_FILES['imagem']['tmp_name'];
+                $imgContent = file_get_contents($imagem);
 
                 if (isset($_POST['NomeInstituicao'])){
                     $NomeInstituicao = $_POST['NomeInstituicao'];
                 } else {
                     $NomeInstituicao = "";
+                }
+                if (isset($_POST['LinklInstituicao'])){
+                    $LinkInstituicao = $_POST['LinkInstituicao'];
+                } else {
+                    $LinkInstituicao = "";
                 }
                 if (isset($_POST['EmailInstituicao'])){
                     $EmailInstituicao = $_POST['EmailInstituicao'];
@@ -47,10 +52,10 @@
                 }
               
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
-                                      VALUES (?,?,?,?,?,?)");
-                if ($sql->execute(array($NomeInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
-                    $msgErro = "Dados cadastrados com suscesso!";
+                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, LinkInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
+                                      VALUES (?,?,?,?,?,?,?");
+                if ($sql->execute(array($NomeInstituicao, $LinkInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
+                    $msgErro = "Dados cadastrados com sucesso!";
                     header('location: verMais.php');
                     echo $msgErro;
                     die();
@@ -85,7 +90,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <!-- favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/favicon.ico" type="imagem/x-icon">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/StyleCadastro.css"> 
@@ -109,6 +114,17 @@
         <input type="text" name="NomeInstituicao" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br>
+
+        <label for="LinkInstituicao">Endereço da Instituição:</label>
+        <br>
+        <input type="text" name="LinkInstituicao" value="<?php echo $LinkInstituicao?>">
+        <span class="obrigatorio">* <?php echo $LinkInstituicaoErr ?></span>
+        <br>
+
+
+        <!-- <input type="text" name="LinkInstituicao" value="<?php echo $NomeInstituicao?>">
+        <span class="obrigatorio">* <?php echo $nomeErr ?></span>
+        <br> -->
 
         <label for="senha">Email:</label>
         <br>
@@ -140,7 +156,7 @@
         <br> 
         <br>
         <label for="User">Imagem:</label>
-        <input class="botaoImg" type="file" name="image"/>
+        <input class="botaoImg" type="file" name="imagem"/>
         <br><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErro ?></span>
