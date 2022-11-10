@@ -11,7 +11,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    /* color: white; */
+    color: black;
     font-family: var(--font-padrao);
 }
 
@@ -42,6 +43,10 @@ body {
     margin-left: 110px;
     border-radius: 27px;
 }
+/* 
+.container:not(:first-child) {
+    margin-top: 100px;
+} */
 
 .container h2 {
     color: black;

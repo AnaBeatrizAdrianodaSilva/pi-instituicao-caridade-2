@@ -60,12 +60,52 @@
         </section>
     </section>
 
-    <section class="container" style="margin-top: 100px;"> <!-- STYLE SERVE PARA DAR UM ESPAÇAMENTO MENOR ENTRE OS CONTAINERS -->
+
+    <?php
+        include "../include/MySql.php";
+        //Depois do FROM, falta o nome do banco de dados 
+        $sql = $pdo->prepare("SELECT * FROM cadastinst ");
+        if ($sql->execute()){
+            $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach($info as $key=>$values){
+
+                echo '<section class="categoria" style="margin-top: 100px;">
+                        <figure class="a">
+                            <a href="#" target="_blake">'.
+                                $image = $values['imagem']
+                                .'<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($image).'"/>
+                            </a>
+                            <figcaption>
+                                <p>'
+                                    .$values['descricao'].
+                                '</p>
+                            </figcaption>
+                        </figure>
+
+                    </section>';
+
+                // echo 'Codigo: '.$values['NomeInstituicao'].'<br>';
+                // echo 'Nome: '.$values['NomeInstituicao'].'<br>';
+                // echo 'Email: '.$values['EmailInstituicao'].'<br>';
+                // echo 'Descrição: '.$values['descricao'].'<br>';
+                // echo 'Valor: '.$values['descricao'].'<br>';
+                // echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
+                // echo 'tipoInst: '.$values['tipoInst']. '<br>';
+
+                // $Imagem = $values['Imagem'];
+                // echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Imagem).'"/><br>';
+                // echo '<hr>';
+            }
+        }
+?>
+
+    <!-- <section class="container" style="margin-top: 100px;"> STYLE SERVE PARA DAR UM ESPAÇAMENTO MENOR ENTRE OS CONTAINERS
         <h2>Deficiência</h2>
         
         <section class="categoria">
             <figure>
-                <a href=" https://casasandreluiz.org.br/" target="_blank">
+                <a href="https://casasandreluiz.org.br/" target="_blank">
                     <img src="../img2/andreLuiz.png" alt="">
                 </a>
                 <figcaption>
@@ -82,30 +122,10 @@
             </figure>
         </section>
     </section>
- 
+  -->
+
     <!-- <?php
         require('../templates/footer.php');
     ?> -->
 </body>
 </html>
-<?php
-    include "../include/MySql.php";
-    //Depois do FROM, falta o nome do banco de dados 
-    $sql = $pdo->prepare("SELECT * FROM cadastinst ");
-    if ($sql->execute()){
-        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
-
-        foreach($info as $key=>$values){
-            echo 'Codigo: '.$values['NomeInstituicao'].'<br>';
-            echo 'Nome: '.$values['TipoInstituicao'].'<br>';
-            echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
-            echo 'Valor: '.$values['descricao'].'<br>';
-            echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
-            echo 'tipoInst: '.$values['tipoInst']. '<br>';
-
-            $Imagem = $values['Imagem'];
-            echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Imagem).'"/><br>';
-            echo '<hr>';
-        }
-    }
-?>

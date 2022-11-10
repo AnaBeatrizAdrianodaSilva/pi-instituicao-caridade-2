@@ -3,7 +3,7 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
+    $descricao = $NomeInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = $image = "";
     $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
     $valor = 0;
 
