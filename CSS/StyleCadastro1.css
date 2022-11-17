@@ -14,7 +14,7 @@
     --color-8: #EFEFEF;
     --color-9: black;
 
-    --font-menu: 'Kumbh Sans', sans-serif;
+    /* --font-menu: 'Kumbh Sans', sans-serif; */
     --font-padrao: 'Mulish', sans-serif;
 }
 
@@ -45,14 +45,23 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-    height: 606px;
+    height: 882px;
     margin: 100px auto;
     border-radius: 10px;
     text-align: center;
-    padding-top:80px;
+    padding-top:40px;
     transition: all 0.5s ease;
-
 }
+/* .formInstituição {
+    background-color: #ffff;
+    width: 882px;
+    height: 799px;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+    padding-top:40px;
+    transition: all 0.5s ease;
+} */
 h1{
     font-size:48px;
     font-family: var(--font-padrao);
@@ -81,11 +90,6 @@ input {
     width: 810px;
     height:74px;
     transition: all 0.5s ease   ;
-
-}
-
-input:not(input[type='submit']) {
-    padding-left: 30px;
 }
 
 .form label, input[type='submit'] {
@@ -93,6 +97,18 @@ input:not(input[type='submit']) {
     margin-left: 60px;
     font-size:32px;
 }
+
+input:not(input[type='submit']) {
+    padding-left: 30px;
+}
+
+input[type='checkbox'] {
+    /* padding-left: 30px; */
+    width: 35px;
+    margin-left: 0px;
+}
+
+
 p{
     font-size:24px;
 }
@@ -111,7 +127,7 @@ a:hover{
         width: 662px;
         height: 404px;
         transition: all 0.5s ease;
-        padding-top: 40px;
+        padding-top: 50px;
     }
 
     .botao {
@@ -150,15 +166,15 @@ a:hover{
         padding-top: 28px;
     }
 
-    .botao {
-        width: 88px;
+    /* .botao {
+        width: 100px;
         height: 36px;
         transition: all 0.5s ease;
-    }
+    } */
 
     input {
         border-radius: 108px;
-        width: 305px;
+        width: 325px;
         height: 38px;
         transition: all 0.5s ease;
     }
@@ -173,4 +189,14 @@ a:hover{
     h1{
         font-size: 28px;
     }
+}
+.botaoImg{
+    padding: 25px;
+}
+.adm{
+    /* padding: 20px; */
+    width: 50px;
+    left: -288px;
+    position: relative;
+    top: 12px;
 }

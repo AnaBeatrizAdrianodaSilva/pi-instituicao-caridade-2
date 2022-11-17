@@ -148,6 +148,7 @@
         </select>
         <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
         <br>
+        <br>
 
         <label for="senha">Descrição:</label>
         <br>
