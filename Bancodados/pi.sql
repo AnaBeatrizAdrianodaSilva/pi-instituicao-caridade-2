@@ -22,8 +22,8 @@ CREATE TABLE `cadastinst` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --------------Exemplo de alterar/AUTO_INCREMENT--------------
-ALTER TABLE `cadastinst`
-  ADD PRIMARY KEY (`codInst`);
+  ALTER TABLE `cadastinst`
+    ADD PRIMARY KEY (`codInst`);
 
 --
 -- Índices para tabela `usuario`

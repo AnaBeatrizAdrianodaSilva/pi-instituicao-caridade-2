@@ -74,7 +74,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/StyleCadastro.css"> 
+    <link rel="stylesheet" href="../CSS/StyleCadastro1.css"> 
     <link rel="stylesheet" href="../CSS/styleHeader.css">
     <link rel="stylesheet" href="CSS/styleFooter.css">
 
@@ -114,7 +114,7 @@
         <span class="obrigatorio">* <?php echo $senhaErr ?></span>
         <br>
         <br>
-        <label for="administrador">Cadastrar sites:</label>
+        <label for="administrador">Administrador:</label>
         <input class="adm" type="checkbox" name="administrador">
         <br><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">

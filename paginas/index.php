@@ -10,7 +10,7 @@ session_start();
     <title>Página principal</title>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
 
@@ -21,11 +21,13 @@ session_start();
     <!-- font-family: 'Mulish', sans-serif; -->
 </head>
 <body>
-    <h2> 
-     Bem-vindo <?php echo $_SESSION['nome']?>
-    <br>
+
+    <?php
+        require('../templates/header.php');
+    ?>
+
     <!-- essa linha abaixo é para botar no header quando tiver pronto -->
-    Você é admin? <?php if ($_SESSION['administrador']==1) echo "<a href='cadInst.php'>Cadastre sua Instiuição</a>"; else echo "Não";?>
+    <!-- Você é admin? <?php //if ($_SESSION['administrador']==1) echo "<a href='cadInst.php'>Cadastre sua Instiuição</a>"; else echo "Não";?> -->
     <!-- hero section start -->
     <div class="hero" id="back">
         <div class="content">
@@ -50,6 +52,7 @@ session_start();
             </div>
         </div>
     </section>
+
     <section id="sla" class="about-1">
         <div class="main1">
             <div class="about1-text">
@@ -68,9 +71,9 @@ session_start();
         </div>
     </section>
 
-    <!-- <?php
-        // require('../templates/footer.php');
-    ?> -->
+    <?php
+        require('../templates/footer.php');
+    ?>
 
     <script src="https://kit.fontawesome.com/0e715a9c13.js" crossorigin="anonymous"></script>
     <script src="javascript.js"></script>
