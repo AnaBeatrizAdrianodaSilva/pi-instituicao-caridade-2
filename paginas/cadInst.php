@@ -3,53 +3,76 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-    $descricao = $NomeInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
-    $nomeErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
+    $descricao = $NomeInstituicao = $LinkInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
+    $nomeErr = $LinkInstituicaoErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
     $valor = 0;
 
 
     if (isset($_POST["cadastro"])){
-        if (!empty($_FILES["image"]["name"])){
+        if (!empty($_FILES["imagem"]["name"])){
             //Pegar informações
-            $fileName = basename($_FILES["image"]["name"]);
+            $fileName = basename($_FILES["imagem"]["name"]);
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
             //Permitir somente alguns formatos
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
 
             if (in_array($fileType, $allowTypes)){
-                $image = $_FILES['image']['tmp_name'];
-                $imgContent = file_get_contents($image);
+                $imagem = $_FILES['imagem']['tmp_name'];
+                $imgContent = file_get_contents($imagem);
 
+                //1
                 if (isset($_POST['NomeInstituicao'])){
                     $NomeInstituicao = $_POST['NomeInstituicao'];
                 } else {
                     $NomeInstituicao = "";
                 }
+
+                //2
+                if (isset($_POST['LinkInstituicao'])){
+                    $LinkInstituicao = $_POST['LinkInstituicao'];
+                } else {
+                    $LinkInstituicao = "";
+                }
+
+                //3
                 if (isset($_POST['EmailInstituicao'])){
                     $EmailInstituicao = $_POST['EmailInstituicao'];
                 } else {
                     $EmailInstituicao = "";
                 }
+
+                //4
                 if (isset($_POST['cnpj'])){
                     $cnpj = $_POST['cnpj'];
                 } else {
                     $cnpj = "";
                 }
+
+                //5
                 if (isset($_POST['descricao'])){
                     $descricao = $_POST['descricao'];
                 } else {
                     $descricao = "";
                 }
+
+                //6
                 if (isset($_POST['tipoInst'])){
                     $tipoInst = $_POST['tipoInst'];
                 } else {
                     $tipoInst = "";
                 }
+                //7
+                if (isset($_POST['imagem'])){
+                    $imagem = $_POST['imagem'];
+                } else {
+                    $imagem = "";
+                }
+                //talvez ta faltando a img
               
                 //Gravar no banco
-                $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
-                                      VALUES (?,?,?,?,?,?)");
-                if ($sql->execute(array($NomeInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
+                $sql = $pdo->prepare("INSERT INTO cadastinst (codInst, NomeInstituicao, LinkInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
+                                      VALUES (null,?,?,?,?,?,?,?)");
+                if ($sql->execute(array($NomeInstituicao, $LinkInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
                     $msgErro = "Dados cadastrados com suscesso!";
                     header('location: verMais.php');
                     echo $msgErro;
@@ -109,7 +132,11 @@
         <input type="text" name="NomeInstituicao" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br>
-
+        <label for="email">Endereço da Instituição:</label>
+        <br>
+        <input type="text" name="LinkInstituicao" value="<?php echo $LinkInstituicao?>">
+        <span class="obrigatorio">* <?php echo $LinkInstituicaoErr ?></span>
+        <br>
         <label for="senha">Email:</label>
         <br>
         <input type="text" name="EmailInstituicao" value="<?php echo $EmailInstituicao?>">
@@ -139,8 +166,8 @@
         <span class="obrigatorio">* <?php echo $descricaoErr ?></span>
         <br> 
         <br>
-        <label for="User">Imagem:</label>
-        <input class="botaoImg" type="file" name="image"/>
+        <label for="imagem">Imagem:</label>
+        <input class="botaoImg" type="file" name="imagem"/>
         <br><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
         <span class="obrigatorio"><?php echo $msgErro ?></span>

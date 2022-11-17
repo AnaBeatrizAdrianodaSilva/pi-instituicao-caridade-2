@@ -96,15 +96,14 @@
         $info = $sql->fetchAll(PDO::FETCH_ASSOC);
 
         foreach($info as $key=>$values){
-            echo 'Codigo: '.$values['NomeInstituicao'].'<br>';
-            echo 'Nome: '.$values['TipoInstituicao'].'<br>';
-            echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
-            echo 'Valor: '.$values['descricao'].'<br>';
-            echo 'Descrição: '.$values['EmailInstituicao'].'<br>';
-            echo 'tipoInst: '.$values['tipoInst']. '<br>';
+            echo 'Nome: '.$values['NomeInstituicao'].'<br>';
+            echo 'Endereço Instituicao: '.$values['LinkInstituicao'].'<br>';
+            echo 'Descrição: '.$values['descricao'].'<br>';
+            // echo 'Email: '.$values['EmailInstituicao'].'<br>';
+            echo 'Tipo Instituição: '.$values['tipoInst']. '<br>';
 
-            $Imagem = $values['Imagem'];
-            echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($Imagem).'"/><br>';
+            $imagem = $values['imagem'];
+            echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($imagem).'"/><br>';
             echo '<hr>';
         }
     }

@@ -13,7 +13,7 @@ CREATE TABLE `cadastro` (
 CREATE TABLE `cadastinst` (
   `codInst` int(11) NOT NULL,
   `NomeInstituicao` varchar(255) NOT NULL,
-  `TipoInstituicao` varchar(255) NOT NULL,
+  `LinkInstituicao` varchar(255) NOT NULL,
   `EmailInstituicao` varchar(255) NOT NULL,
   `cnpj` varchar(18) NOT NULL,
   `tipoInst` varchar(255) NOT NULL,
