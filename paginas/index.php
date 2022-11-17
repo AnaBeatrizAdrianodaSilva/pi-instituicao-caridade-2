@@ -21,11 +21,13 @@ session_start();
     <!-- font-family: 'Mulish', sans-serif; -->
 </head>
 <body>
-    <h2> 
-     Bem-vindo <?php echo $_SESSION['nome']?>
-    <br>
+
+    <?php
+        require('../templates/header.php');
+    ?>
+
     <!-- essa linha abaixo é para botar no header quando tiver pronto -->
-    Você é admin? <?php if ($_SESSION['administrador']==1) echo "<a href='cadInst.php'>Cadastre sua Instiuição</a>"; else echo "Não";?>
+    <!-- Você é admin? <?php //if ($_SESSION['administrador']==1) echo "<a href='cadInst.php'>Cadastre sua Instiuição</a>"; else echo "Não";?> -->
     <!-- hero section start -->
     <div class="hero" id="back">
         <div class="content">
@@ -68,9 +70,9 @@ session_start();
         </div>
     </section>
 
-    <!-- <?php
-        // require('../templates/footer.php');
-    ?> -->
+    <?php
+        require('../templates/footer.php');
+    ?>
 
     <script src="https://kit.fontawesome.com/0e715a9c13.js" crossorigin="anonymous"></script>
     <script src="javascript.js"></script>

@@ -126,9 +126,9 @@
 
     </section>
 
-    <!-- <?php
+    <?php
         require('../templates/footer.php');
-    ?> -->
+    ?>
 
     <!-- <footer class='rodape'>
         <svg width="1864" height="395" viewBox="0 0 1864 395" fill="none" xmlns="http://www.w3.org/2000/svg">
