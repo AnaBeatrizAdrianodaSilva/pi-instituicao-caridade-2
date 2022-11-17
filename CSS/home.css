@@ -232,21 +232,6 @@ body {
     margin-left: 210px;
 }
 
-/* FOOTER */
-
-.rodape {
-    position: absolute;
-    top: 5350px;
-}
-
-.rodape #conteudo {
-    color: white;
-    font-weight: bolder;
-    position: absolute;
-    top: 200px;
-    left: 600px;
-}
-
 @media screen and (max-width:960px){
 
 

@@ -17,7 +17,8 @@ html{
 }
 
 body {
-    background-color: #262DDA;
+    /* background-color: #262DDA; */
+    background-color: #5158FF;
 }
 
 .hero {
@@ -55,6 +56,7 @@ h4{
     background: #7176FF;
     
 }
+
 .about img{
     height: auto;
     width: 430px;
@@ -62,6 +64,7 @@ h4{
 .about-text{
     width: 550px;
 }
+
 .main{
     width: 1130px;
     max-width: 95%;
@@ -70,12 +73,14 @@ h4{
     align-items: center;
     justify-content: space-around;
 }
+
 .about-text h2{
     color: white;
     font-size: 75px;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
+
 .about-text h5{
     color: white;
     letter-spacing: 2px;
@@ -83,6 +88,7 @@ h4{
     margin-bottom: 25px;
     text-transform: capitalize;
 }
+
 .about-text p{
     color: white;
     letter-spacing: 1px;
@@ -90,18 +96,25 @@ h4{
     font-size: 18px;
     margin-bottom: 45px;
 }
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+
 .about-1{
     width: 100%;
+    /* height: 1000px; */
     padding: 100px 0px;
     background: #5158FF;
 }
+
 .about-1 img{
     height: auto;
     width: 430px;
 }
+
 .about1-text{
     width: 550px;
 }
+
 .main1{
     width: 1130px;
     max-width: 95%;
@@ -110,12 +123,14 @@ h4{
     align-items: center;
     justify-content: space-around;
 }
+
 .about1-text h2{
     color: white;
     font-size: 75px;
     text-transform: capitalize;
     margin-bottom: 20px;
 }
+
 .about1-text h5{
     color: white;
     letter-spacing: 2px;
@@ -123,6 +138,7 @@ h4{
     margin-bottom: 25px;
     text-transform: capitalize;
 }
+
 .about1-text p{
     color: white;
     letter-spacing: 1px;
@@ -154,10 +170,13 @@ h5{
     margin-top: 20px;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------------------- */
+
 @media screen and (max-width:900px){
     .sobrePI{
         order: -1;
     }
+
     .rodape{
         height: 900px;
     }

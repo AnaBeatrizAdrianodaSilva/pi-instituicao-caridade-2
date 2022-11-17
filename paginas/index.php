@@ -10,7 +10,7 @@ session_start();
     <title>Página principal</title>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
 
@@ -52,6 +52,7 @@ session_start();
             </div>
         </div>
     </section>
+
     <section id="sla" class="about-1">
         <div class="main1">
             <div class="about1-text">
