@@ -93,7 +93,7 @@
     <link rel="shortcut icon" href="../img/favicon.ico" type="imagem/x-icon">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/StyleCadastro.css"> 
+    <link rel="stylesheet" href="../CSS/StyleCadastro.css"> 
     <link rel="stylesheet" href="../CSS/styleHeader.css">
     <link rel="stylesheet" href="CSS/styleFooter.css">
 

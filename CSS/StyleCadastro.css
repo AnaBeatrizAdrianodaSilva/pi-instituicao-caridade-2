@@ -45,13 +45,14 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-    height: 1150px;
+    height: 1250px;
     margin: 100px auto;
     border-radius: 10px;
     text-align: center;
     padding-top:40px;
     transition: all 0.5s ease;
 }
+
 /* .formInstituição {
     background-color: #ffff;
     width: 882px;
@@ -62,6 +63,7 @@ body {
     padding-top:40px;
     transition: all 0.5s ease;
 } */
+
 h1{
     font-size:48px;
     font-family: var(--font-padrao);
