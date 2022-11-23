@@ -70,8 +70,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <!-- favicon -->
-    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../CSS/StyleCadastro1.css"> 

@@ -7,6 +7,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/home.css">
 
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
 
     <!-- FONTS -->
