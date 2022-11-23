@@ -45,7 +45,11 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
+<<<<<<< HEAD
+    height: 950px;
+=======
     height: 1250px;
+>>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
     margin: 100px auto;
     border-radius: 10px;
     text-align: center;

@@ -129,3 +129,26 @@
     ?> -->
 </body>
 </html>
+<<<<<<< HEAD
+<?php
+    include "../include/MySql.php";
+    //Depois do FROM, falta o nome do banco de dados 
+    $sql = $pdo->prepare("SELECT * FROM cadastinst ");
+    if ($sql->execute()){
+        $info = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach($info as $key=>$values){
+            echo 'Nome: '.$values['NomeInstituicao'].'<br>';
+            echo 'Endereço Instituicao: '.$values['LinkInstituicao'].'<br>';
+            echo 'Descrição: '.$values['descricao'].'<br>';
+            // echo 'Email: '.$values['EmailInstituicao'].'<br>';
+            echo 'Tipo Instituição: '.$values['tipoInst']. '<br>';
+
+            $imagem = $values['imagem'];
+            echo '<img src="data:image/jpg;charset=utf8;base64,'.base64_encode($imagem).'"/><br>';
+            echo '<hr>';
+        }
+    }
+?>
+=======
+>>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
