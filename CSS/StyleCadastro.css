@@ -121,6 +121,7 @@ input:not(input[type='submit']) {
     box-shadow: 7px 8px 20px 5px #00000075;
 }
 
+
 .form select {
     font-family: var(--font-padrao);
     box-shadow: 4px 4px 9px 0 #00000078;
@@ -135,11 +136,13 @@ input:not(input[type='submit']) {
 
 .form p a {
     margin-left: 10px;
+    text-decoration: none;
 }
 
 .form p a:hover {
     color: var(--color-1);
     transition: all 0.2s ease;
+    text-decoration: underline;
 }
 
 .form label {
