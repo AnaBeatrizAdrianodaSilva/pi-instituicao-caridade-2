@@ -14,8 +14,9 @@
     --color-8: #EFEFEF;
     --color-9: black;
 
-    /* --font-menu: 'Kumbh Sans', sans-serif; */
+    --font-menu: 'Kumbh Sans', sans-serif;
     --font-padrao: 'Mulish', sans-serif;
+    --font-title: 'Work Sans', sans-serif;
 }
 
    /* Cofig Globais */
@@ -45,16 +46,13 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-<<<<<<< HEAD
-    height: 950px;
-=======
     height: 1250px;
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
     margin: 100px auto;
     border-radius: 10px;
     text-align: center;
     padding-top:40px;
     transition: all 0.5s ease;
+    box-shadow: 19px 14px 20px 16px #0000003b;
 }
 
 /* .formInstituição {
@@ -70,7 +68,8 @@ body {
 
 h1{
     font-size:48px;
-    font-family: var(--font-padrao);
+    font-family: var(--font-title);
+    text-shadow: 0px 10px 10px #0000005c;
 }
 
 .botao {
@@ -99,21 +98,46 @@ input {
     padding-left: 30px;
 }
 
+.form label {
+    font-family: var(--font-padrao);
+    text-shadow: 0px 5px 20px #000000c9;
+}
+
 .form label, input[type='submit'] {
+    font-family: var(--font-padrao);
     float: left;
     margin-left: 60px;
     font-size:32px;
+    margin-top: 50px;
+    padding-right: 30px;
+}
+
+.form input[type='subtmit'] {
+    box-shadow: 7px 7px 10px 1px #000000ab;
 }
 
 input:not(input[type='submit']) {
     padding-left: 30px;
+    box-shadow: 7px 8px 20px 5px #00000075;
 }
 
-p {
+.form select {
+    font-family: var(--font-padrao);
+    box-shadow: 4px 4px 9px 0 #00000078;
+}
+
+.form p {
     font-size:24px;
+    margin-top: 70px;
+    font-family: var(--font-menu);
+    text-shadow: 0px 7px 9px #0000007d;
 }
 
-a:hover {
+.form p a {
+    margin-left: 10px;
+}
+
+.form p a:hover {
     color: var(--color-1);
     transition: all 0.2s ease;
 }
