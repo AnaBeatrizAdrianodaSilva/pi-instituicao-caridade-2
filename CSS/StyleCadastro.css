@@ -46,10 +46,9 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-    height: 1250px;
+    height: 1590px;
     margin: 100px auto;
     border-radius: 10px;
-    text-align: center;
     padding-top:40px;
     transition: all 0.5s ease;
     box-shadow: 19px 14px 20px 16px #0000003b;
@@ -70,6 +69,7 @@ h1{
     font-size:48px;
     font-family: var(--font-title);
     text-shadow: 0px 10px 10px #0000005c;
+    text-align: center;
 }
 
 .botao {
@@ -94,13 +94,14 @@ input {
     border-radius: 108px;
     width: 810px;
     height:74px;
-    transition: all 0.5s ease   ;
+    transition: all 0.5s ease;
     padding-left: 30px;
 }
 
 .form label {
     font-family: var(--font-padrao);
     text-shadow: 0px 5px 20px #000000c9;
+    margin: 30px 0 30px 0;
 }
 
 .form label, input[type='submit'] {
@@ -112,15 +113,15 @@ input {
     padding-right: 30px;
 }
 
-.form input[type='subtmit'] {
+.form input[type='submit'] {
     box-shadow: 7px 7px 10px 1px #000000ab;
 }
 
 input:not(input[type='submit']) {
+    margin-left: 35px;
     padding-left: 30px;
     box-shadow: 7px 8px 20px 5px #00000075;
 }
-
 
 .form select {
     font-family: var(--font-padrao);
@@ -132,6 +133,8 @@ input:not(input[type='submit']) {
     margin-top: 70px;
     font-family: var(--font-menu);
     text-shadow: 0px 7px 9px #0000007d;
+    display: inline-block;
+    margin-left: 270px;
 }
 
 .form p a {
@@ -145,8 +148,8 @@ input:not(input[type='submit']) {
     text-decoration: underline;
 }
 
-.form label {
-    margin-top: 30px;
+.form #descricao {
+    float: left;
 }
 
 @media screen and (max-width:980px){

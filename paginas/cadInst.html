@@ -132,7 +132,7 @@
 
         <label for="email">Nome da Instituição:</label>
         <br>
-        <input type="text" name="NomeInstituicao" <?php echo $NomeInstituicao?>">
+        <input type="text" name="NomeInstituicao" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br>
 
@@ -170,8 +170,10 @@
         <span class="obrigatorio">* <?php echo $tipoInstErr ?></span>
         <br>
         <br>
+        <br>
+        <br>
 
-        <label for="senha">Descrição:</label>
+        <label for="senha" id="descricao">Descrição:</label>
         <br>
         <input type="text" name="descricao" value="<?php echo $descricao?>">
         <span class="obrigatorio">* <?php echo $descricaoErr ?></span>

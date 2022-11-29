@@ -16,6 +16,7 @@
 
     --font-menu: 'Kumbh Sans', sans-serif;
     --font-padrao: 'Mulish', sans-serif;
+    --font-title: 'Work Sans', sans-serif;
 }
 
    /* Cofig Globais */
@@ -45,17 +46,18 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-    height: 606px;
+    height: 680px;
     margin: 100px auto;
     border-radius: 10px;
-    text-align: center;
     padding-top:80px;
     transition: all 0.5s ease;
-
+    box-shadow: 19px 14px 20px 16px #0000003b;
 }
 h1{
+    text-align: center;
     font-size:48px;
-    font-family: var(--font-padrao);
+    font-family: var(--font-title);
+    text-shadow: 0px 10px 10px #0000005c;
 }
 
 .botao {
@@ -66,13 +68,13 @@ h1{
     border-radius: 10px;
     transition: all 0.5s ease;
 }
+
 .botao:hover{
     background-color: var(--color-0);
     transition: all 0.5s ease;
     color: var(--color-9);
     border-color: var(--color-);
 }
-
 
 input {
     border: none;
@@ -81,27 +83,51 @@ input {
     width: 810px;
     height:74px;
     transition: all 0.5s ease   ;
-
-}
-
-input:not(input[type='submit']) {
     padding-left: 30px;
 }
 
+input:not(input[type='submit']) {
+    margin-left: 35px;
+    padding-left: 30px;
+    box-shadow: 7px 8px 20px 5px #00000075;
+}
+
+.form input[type='submit'] {
+    box-shadow: 7px 7px 10px 1px #000000ab;
+    margin-top: 50px;
+    padding-right: 30px;
+}
+
 .form label, input[type='submit'] {
+    font-family: var(--font-padrao);
     float: left;
     margin-left: 60px;
     font-size:32px;
 }
-p{
-    font-size:24px;
+
+.form label {
+    font-family: var(--font-padrao);
+    text-shadow: 0px 5px 20px #000000c9;
+    margin: 30px 0 30px 60px;
 }
-a:hover{
+
+.form p {
+    text-shadow: 0px 7px 9px #0000007d;
+    font-family: var(--font-menu);
+    font-size:24px;
+    margin-top: 70px;
+    margin-left: 470px;
+}
+
+.form a {
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.form p a:hover {
     color: var(--color-1);
     transition: all 0.2s ease;
-}
-.form label {
-    margin-top: 30px;
+    text-decoration: underline;
 }
 
 @media screen and (max-width:980px){
