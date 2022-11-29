@@ -3,13 +3,8 @@
     include "../include/MySql.php";
 
     $msgErro = "";
-<<<<<<< HEAD
-    $descricao = $NomeInstituicao = $LinkInstituicao = $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = "";
-    $nomeErr = $LinkInstituicaoErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = "";
-=======
     $descricao = $NomeInstituicao = $LinkInstituicao= $EmailInstituicao = $cnpj = $tipoInst = $ONGs = $InstituicaoGovernamental = $InstituicaoPrivada = $imagem = "";
     $nomeErr = $LinkInstituicaoErr = $emailErr = $cnpjErr = $senhaErr = $descricaoErr = $tipoInstErr = $ONGsErr = $InstituicaoGovernamentalErr = $InstituicaoPrivadaErr = $imagemErr  = "";
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
     $valor = 0;
 
 
@@ -31,22 +26,11 @@
                 } else {
                     $NomeInstituicao = "";
                 }
-<<<<<<< HEAD
-
-                //2
-                if (isset($_POST['LinkInstituicao'])){
-=======
                 if (isset($_POST['LinklInstituicao'])){
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
                     $LinkInstituicao = $_POST['LinkInstituicao'];
                 } else {
                     $LinkInstituicao = "";
                 }
-<<<<<<< HEAD
-
-                //3
-=======
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
                 if (isset($_POST['EmailInstituicao'])){
                     $EmailInstituicao = $_POST['EmailInstituicao'];
                 } else {
@@ -82,17 +66,10 @@
                 //talvez ta faltando a img
               
                 //Gravar no banco
-<<<<<<< HEAD
-                $sql = $pdo->prepare("INSERT INTO cadastinst (codInst, NomeInstituicao, LinkInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
-                                      VALUES (null,?,?,?,?,?,?,?)");
-                if ($sql->execute(array($NomeInstituicao, $LinkInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
-                    $msgErro = "Dados cadastrados com suscesso!";
-=======
                 $sql = $pdo->prepare("INSERT INTO cadastinst (NomeInstituicao, LinkInstituicao, EmailInstituicao, cnpj, tipoInst, descricao, imagem)
                                       VALUES (?,?,?,?,?,?,?");
                 if ($sql->execute(array($NomeInstituicao, $LinkInstituicao, $EmailInstituicao, $cnpj, $tipoInst, $descricao, base64_encode($imgContent) ))){
                     $msgErro = "Dados cadastrados com sucesso!";
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
                     header('location: verMais.php');
                     echo $msgErro;
                     die();
@@ -152,25 +129,18 @@
         <input type="text" name="NomeInstituicao" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br>
-<<<<<<< HEAD
-        <label for="email">Endereço da Instituição:</label>
-=======
 
         <label for="LinkInstituicao">Endereço da Instituição:</label>
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
         <br>
         <input type="text" name="LinkInstituicao" value="<?php echo $LinkInstituicao?>">
         <span class="obrigatorio">* <?php echo $LinkInstituicaoErr ?></span>
         <br>
-<<<<<<< HEAD
-=======
 
 
         <!-- <input type="text" name="LinkInstituicao" value="<?php echo $NomeInstituicao?>">
         <span class="obrigatorio">* <?php echo $nomeErr ?></span>
         <br> -->
 
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
         <label for="senha">Email:</label>
         <br>
         <input type="text" name="EmailInstituicao" value="<?php echo $EmailInstituicao?>">
@@ -201,11 +171,7 @@
         <span class="obrigatorio">* <?php echo $descricaoErr ?></span>
         <br> 
         <br>
-<<<<<<< HEAD
-        <label for="imagem">Imagem:</label>
-=======
         <label for="User">Imagem:</label>
->>>>>>> 6d2a7120be2b12eb890fedad9f9c1a1cb2baf273
         <input class="botaoImg" type="file" name="imagem"/>
         <br><br>
         <input class="botao" type="submit" value="Salvar" name="cadastro">
