@@ -47,13 +47,20 @@
 /* TROÇO PRETO (FUTURAMENTE UM BANNER) */
 
 .hero {
-    height: 85vh;
+    height: 95vh;
     width: 100%;
     background-color: black;
     background-size: cover;
     background-position: center;
-
+    background-image: url('../img2/2.png');
+    /* object-fit: cover; */
+    /* object-position: 0px 40px; */
+    
     position: absolute;
-    top: 0;
+    top: 48px;
     z-index: -10;
 }   
+
+.bannerRoxo {
+    background-image: url('../img2/1.png');
+}

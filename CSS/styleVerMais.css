@@ -40,7 +40,7 @@ body {
     background-color: #F2D17C;
     width: 95%;
     height: 715px;
-    margin-top: 750px;
+    margin-top: 700px;
     margin-left: 50px;
     border-radius: 27px;
     box-shadow: 5px 5px 14px 3px #00000078;
@@ -60,7 +60,7 @@ body {
 }
 
 .container figure {
-    width: 300px;
+    width: 400px;
     padding: 30px
 }
 
@@ -94,6 +94,7 @@ body {
     font-family: var(--font-padrao);
     font-weight: 700;
     background-color: #262DDA;
+    color: white;
     width: 335px;
     padding: 20px;
     border-bottom-left-radius: 12px;
@@ -104,6 +105,7 @@ body {
 .categoria {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
     gap: 100px;
 }
