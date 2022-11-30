@@ -37,11 +37,11 @@
         <!-- MENU -->
 
         <nav>
-            <a href="./index.html">Home</a>
+            <a href="./index.php">Home</a>
 
             <img src="../img2/logo.png" alt="Logo" class='logo'>
 
-            <a href="./verMais.html">Ver Mais</a>
+            <a href="./verMais.php">Ver Mais</a>
         </nav>
 
     </header>

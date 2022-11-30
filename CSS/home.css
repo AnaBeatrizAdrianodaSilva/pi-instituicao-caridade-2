@@ -28,7 +28,6 @@ body {
     background-color: #5158FF;
 }
 
-
 /* HEADER */
 
 .logo {
@@ -61,13 +60,17 @@ body {
     opacity: .7;
 }
 
+/* .cabecaHome {
+    position: absolute;
+} */
+
 /* USER */
 
 .user {
     background-color: #5158FF;
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: absolute; 
     top: 0;
     z-index: -10;
 
@@ -103,7 +106,7 @@ body {
     padding: 20px;
     border-radius: 10px;
 
-    box-shadow: 8px 7px 8px 5px #ffffff31;
+    box-shadow: 5px 4px 8px 5px #ffffff1f;
 }
 
 .login section a:hover {
@@ -113,11 +116,11 @@ body {
 
 /* ONDA 1 e ONDA 2 */
 
-#onda1 {
+.onda1 {
     margin-top: 400px;
 }
 
-#onda2 {
+.onda2 {
     margin-top: 500px;
 }
 
