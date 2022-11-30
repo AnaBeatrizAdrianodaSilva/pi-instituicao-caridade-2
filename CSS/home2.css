@@ -1,0 +1,232 @@
+/* VARIÁVEIS */
+
+:root {
+    --font-link: 'Kumbh Sans', sans-serif;
+    --font-padrao: 'Mulish', sans-serif;
+    --font-title: 'Work Sans', sans-serif;
+}
+
+/* CONFIG GLOBAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: #5158FF;
+}
+
+/* HEADER */
+
+.header {
+    background-image: url('../img2/header.png');
+    background-repeat: no-repeat;
+    background-position: -190px 0 ;
+    width: 100%;
+    height: 220px;
+    text-align: center;
+}
+
+.header nav {
+    padding-top: 25px;    
+    margin-right: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header nav img {
+    width: 150px;
+    height: 150px;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-family: var(--font-link);
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+/* USER */
+
+.user {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user img {
+    width: 520px;
+    height: 520px;
+}
+
+.user .conta {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+.user .conta h2 {
+    font-size: 2.7rem;
+    font-family: var(--font-title);
+}
+
+.user .conta a {
+    color: white;
+    background-color: black;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-link);
+    font-size: 2rem;
+    display: inline-block;
+    margin-top: 20px;   
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 4px 8px 5px #ffffff1f;
+}
+
+.user .conta a:hover {
+    opacity: .8;
+    cursor: pointer;
+}
+
+.user .conta #entrar {
+    width: 170px;
+    font-size: 2.3rem;
+}
+
+/* ONDA 1 */
+
+.ondaBackgroundOne {
+    background-image: url('../img2/Onda1Home.png');
+    background-position: -300px 0;
+    width: 100%;
+    height: 720px;
+    background-repeat: no-repeat;
+}
+
+/* SOBRE */
+
+.sobre {
+    background-color: #FFF3CD;
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    position: absolute;
+    top: 1110px;
+    z-index: -10;
+}
+
+.sobre h2 {
+    font-size: 4rem;
+    font-family: var(--font-title);
+    margin-top: -30px;
+}
+
+.sobre p {
+    font-size: 2.3rem;
+    font-family: var(--font-padrao);
+    width: 700px;
+    text-align: center;
+}
+
+/* ONDA 2  */
+
+.ondaBackgroundTwo {
+    background-image: url('../img2/Onda2Home.png');
+    background-position: -300px 0;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 720px;
+    margin-top: 400px;
+}
+
+/* DEVS */
+
+.devs h2 {
+    text-align: center;
+    color: white;
+    font-family: var(--font-title);
+    margin: 150px;
+    font-size: 4rem;
+}
+
+.devs img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.devs .squadDevs {
+    background-image: url(../img2/fundoDevs.png);
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: -37px -37px;
+
+    width: 429px;
+    height: 427px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+
+}
+
+.devs .squadDevs:first-child { /* Para deixar uma margem entre o quadrado de fundo e a tela */
+    margin-left: 15px;
+}
+
+.devs .squadDevs:nth-child(2) { /* Para deixar uma margem entre o quadrado de fundo e a tela */
+    margin-right: 15px;
+}
+
+.devs .squadDevs p {
+    color: white;
+    font-size: 2.5rem;
+    font-family: var(--font-padrao);
+    /* margin: 250px; */
+}
+
+.devsTop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.devsMid {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.devsBot {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
