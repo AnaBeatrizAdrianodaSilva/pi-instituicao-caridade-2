@@ -36,7 +36,7 @@
         <!-- MENU -->
 
         <nav>
-            <a href="./index.php">Home</a>
+            <a href="./home.php">Home</a>
 
             <img src="../img2/logo.png" alt="Logo" class='logo'>
 
