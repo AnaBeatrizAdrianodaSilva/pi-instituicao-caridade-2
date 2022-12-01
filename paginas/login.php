@@ -34,7 +34,7 @@
                     $_SESSION['administrador'] = $values['administrador'];
                     
                 }
-                header('location:index.php');
+                header('location:home.php');
             } else {
                 echo '<h6>Email ou senha não cadastrados</h6>';
             }

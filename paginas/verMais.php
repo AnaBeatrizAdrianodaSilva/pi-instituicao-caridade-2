@@ -224,12 +224,18 @@
             </figure>
         </section>
     </section>
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
  
 
-    <!-- <?php
-        // require('../templates/footer.php');
-    ?> -->
+    <?php
+        require('../templates/footer.php');
+    ?>
 </body>
 </html>
 <!-- <?php

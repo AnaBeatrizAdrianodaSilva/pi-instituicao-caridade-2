@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="./CSS/home.css">
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
@@ -31,9 +31,8 @@
         <nav>
             <a href="#sobre">Sobre</a>
     
-            <img src="../img2/logo.png" alt="Logo">
+            <img src="./img2/logo.png" alt="Logo">
     
-            <a href="#devs">Desenvolvedores</a>
         </nav>
     </header>
 
@@ -45,24 +44,24 @@
 
                 <section class="login">
                     <h2>Já possui uma conta?</h2>
-                    <a href="./login.php" id="entrar">Entrar</a>
+                    <a href="./paginas/login.php" id="entrar">Entrar</a>
                 </section>
 
                 <section class="cadastrar">
                     <h2>Novo usuário?</h2>
-                    <a href="./cadastro.php">Criar um conta</a>
+                    <a href="./paginas/cadastro.php">Criar um conta</a>
                 </section>
 
                 
             </section>
             
-            <img src="../img2/User.svg" alt="">
+            <img src="./img2/User.svg" alt="">
 
         </section>
 
         <section class="ondaBackgroundOne"></section> <!-- Section feita para colocar a onda como background -->
         
-        <section class="sobre">
+        <section class="sobre" id='sobre'>
             
             <h2>Sobre</h2>
             
