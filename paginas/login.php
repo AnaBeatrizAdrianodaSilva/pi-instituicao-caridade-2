@@ -1,50 +1,47 @@
-<!-- <?php
-    // include "../include/MySql.php";
-    // include "../include/functions.php";
+<?php
+    include "../include/MySql.php";
+    include "../include/functions.php";
 
-    // session_start();
-    // $_SESSION['nome'] = "";
-    // $_SESSION['administrador'] = "";
+    session_start();
+    $_SESSION['nome'] = "";
+    $_SESSION['administrador'] = "";
 
-    // $email = $senha = "";
-    // $emailErr = $senhaErr = $msgErr = "";
+    $email = $senha = "";
+    $emailErr = $senhaErr = $msgErr = "";
 
-    // if ($_SERVER['REQUEST_METHOD'] == "POST"){
-    //     if (empty($_POST['email'])){
-    //         $emailErr = "Email é obrigatório!";
-    //     } else {
-    //         $email = test_input($_POST["email"]);
-    //     }
+    if ($_SERVER['REQUEST_METHOD'] == "POST"){
+        if (empty($_POST['email'])){
+            $emailErr = "Email é obrigatório!";
+        } else {
+            $email = test_input($_POST["email"]);
+        }
 
-    //     if (empty($_POST['senha'])){
-    //         $senhaErr = "Senha é obrigatória!";
-    //     } else {
-    //         $senha = test_input($_POST['senha']);
-    //     }
+        if (empty($_POST['senha'])){
+            $senhaErr = "Senha é obrigatória!";
+        } else {
+            $senha = test_input($_POST['senha']);
+        }
 
-    //     Codigo para consultar os dados no Banco de Dados
-    //     Consulta no banco de dados
-    //     $sql = $pdo->prepare("SELECT * FROM cadastro 
-    //                           WHERE email = ? AND senha = ?");
-    //     if ($sql->execute(array($email,MD5($senha)))){
-    //         $info = $sql->fetchAll(PDO::FETCH_ASSOC); deve estar o problema aqui
-    //         if (count($info) > 0) { 
-    //             foreach($info as $key => $values){
-    //                 $_SESSION['nome'] = $values['nome'];
-    //                 $_SESSION['administrador'] = $values['administrador'];
+        // Codigo para consultar os dados no Banco de Dados
+        // Consulta no banco de dados
+        $sql = $pdo->prepare("SELECT * FROM cadastro 
+                              WHERE email = ? AND senha = ?");
+        if ($sql->execute(array($email,MD5($senha)))){
+            $info = $sql->fetchAll(PDO::FETCH_ASSOC); // deve estar o problema aqui
+            if (count($info) > 0) { 
+                foreach($info as $key => $values){
+                    $_SESSION['nome'] = $values['nome'];
+                    $_SESSION['administrador'] = $values['administrador'];
                     
-    //             }
-    //             header('location:index.php');
-    //         } else {
-    //             echo '<h6>Email ou senha não cadastrados</h6>';
-    //         }
-    //     }  
-    // }
+                }
+                header('location:index.php');
+            } else {
+                echo '<h6>Email ou senha não cadastrados</h6>';
+            }
+        }  
+    }
 
 ?>
-<?php
-    // equire("../templates/headerResto.php");
-?> -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -53,6 +50,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
@@ -75,6 +73,11 @@
 </head>
 
 <body>
+
+<!-- <?php
+    // require("../templates/headerResto.php");
+?> -->
+
     <!-- <div class="container"> -->
     <form method="POST" action="" class="form">
         <h1>Login</h1>
@@ -87,7 +90,7 @@
 
         <label for="senha">Senha:</label>
         <br>
-        <input type="text" name="senha" value="<?php echo $senha?>">
+        <input type="password" name="senha" value="<?php echo $senha?>">
             <span class="obrigatorio">* <?php echo $senhaErr ?></span>
         <br>
         <br>
@@ -96,8 +99,10 @@
         <span class="obrigatorio"><?php echo $msgErr ?></span>
         <p>Não possui conta?<a href="cadastro.php">Cadastre-se</a></p>
     </form>
+
+    <?php
+    require("../templates/footer.php");
+?>
+
 </body>
 </html>
-<!-- <?php
-    // require("../templates/footer.php");
-?> -->

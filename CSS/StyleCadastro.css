@@ -46,7 +46,7 @@ body {
 .form {
     background-color: #ffff;
     width: 882px;
-    height: 1590px;
+    height: 1680px;
     margin: 100px auto;
     border-radius: 10px;
     padding-top:40px;
@@ -120,7 +120,7 @@ input {
 input:not(input[type='submit']) {
     margin-left: 35px;
     padding-left: 30px;
-    box-shadow: 7px 8px 20px 5px #00000075;
+    box-shadow: 7px 8px 20px 5px #00000042;
 }
 
 .form select {
