@@ -2,6 +2,6 @@
 
 ### Amanda Richetti Rondão
 ### Ana Beatriz Adriano da Silva
-### Isabella Heloisa Schimtz
+### Isabella Heloísa Schmitz
 ### João Gabriel Lemos Alvez
 ### Lais Betim
