@@ -54,6 +54,35 @@
         }else{
             $msgErr = "Dados não cadastrados!";
         }
+
+        // if ($email && $nome && $cpf && $senha) {
+        //     $sql = $pdo->prepare("SELECT * FROM cadastro WHERE email = ?");
+        //     if ($sql->execute(array($email))) {
+        //         if ($sql->rowCount() > 0) {
+        //             $msgErr = "Usuário já cadastrado!";
+        //         } else {
+        //             $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
+        //             $administrador = 0; // Defina o valor adequado para essa variável
+        
+        //             $sql = $pdo->prepare("INSERT INTO cadastro (codigoUser, nome, email, cpf, senha, administrador)
+        //                                   VALUES (null, ?, ?, ?, ?, ?)");
+        
+        //             if ($sql->execute(array($nome, $email, $cpf, $hashSenha, $administrador))) {
+        //                 $msgErr = "Dados cadastrados com sucesso!";
+        //                 header('Location: login.php');
+        //                 exit(); // Importante para evitar a execução adicional do código após redirecionar
+        //             } else {
+        //                 $msgErr = "Dados não cadastrados!";
+        //             }
+        //         }
+        //     } else {
+        //         $msgErr = "Erro no comando SELECT";
+        //     }
+        // } else {
+        //     $msgErr = "Dados não cadastrados!";
+        // }
+        
+
     }
 ?>
 
