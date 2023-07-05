@@ -1,7 +1,7 @@
 <?php
     define('HOST', 'localhost');
     define('PORT', '3306');// Porta do MySql
-    define('DB', 'id19944874_pi	'); //aqui vai o nome do banco de dados
+    define('DB', 'acaosolidaria'); //aqui vai o nome do banco de dados
     define('USER', 'root');
     define('PASS', '');
 
@@ -18,4 +18,3 @@
 
 
 ?>
-

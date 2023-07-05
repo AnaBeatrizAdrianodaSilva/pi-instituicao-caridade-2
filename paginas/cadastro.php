@@ -3,45 +3,36 @@
     include "../include/MySql.php";
 
     // variaveis
-    $email = $nome = $cpf = $senha = $administrador = "";
-    $emailErr = $nomeErr = $cpfErr = $senhaErr = $msgErr = "";
+    $email = $name = $senha = "";
+    $emailErr = $nameErr = $senhaErr = $msgErr = "";
     
     if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['cadastro'])){
-        if (empty($_POST['nome'])){
-            $nomeErr = "Nome é obrigatório!";
+        if (empty($_POST['name'])){
+            $nameErr = "name é obrigatório!";
         } else {
-            $nome = test_input($_POST["nome"]);
+            $name = test_input($_POST["name"]);
         }
 	    if (empty($_POST['email'])){
             $emailErr = "Email é obrigatório!";
         } else {
             $email = test_input($_POST["email"]);
         }
- 	    if (empty($_POST['cpf'])){
-            $cpfErr = "cpf é obrigatório!";
-        } else {
-            $cpf = test_input($_POST["cpf"]);
-        }
 	    if (empty($_POST['senha'])){
             $senhaErr = "Senha é obrigatório!";
         } else {
             $senha = test_input($_POST["senha"]);
         }
-        if (empty($_POST['administrador'])){
-            $administrador = false;
-        } else {
-            $administrador = true;
-        }
+        
         // verificar se existe um usuario
-        if ($email && $nome && $cpf && $senha){
-            $sql = $pdo-> prepare("SELECT * FROM cadastro WHERE email = ?");
+        if ($email && $name && $senha){
+            $sql = $pdo-> prepare("SELECT * FROM users WHERE email = ?");
             if ($sql->execute(array($email))){
                 if ($sql -> rowCount() > 0){
                     $msgErr = "Usuário já cadastrado!";
                 }else{
-                    $sql = $pdo-> prepare("INSERT INTO cadastro (codigoUser, nome, email, cpf, senha, administrador)
-                                          values (null, ?,?,?,?,?)");
-                    if ($sql -> execute(array($nome, $email, $cpf, md5($senha), $administrador))){
+                    $sql = $pdo-> prepare("INSERT INTO users (id, nome, email, senha)
+                                          values (null, ?,?,?)");
+                    if ($sql -> execute(array($name, $email, md5($senha)))){
                         $msgErr = "Dados cadastrados com sucesso!";
                         header('location: login.php');
                     }else{
@@ -55,7 +46,7 @@
             $msgErr = "Dados não cadastrados!";
         }
 
-        // if ($email && $nome && $cpf && $senha) {
+        // if ($email && $name && $cpf && $senha) {
         //     $sql = $pdo->prepare("SELECT * FROM cadastro WHERE email = ?");
         //     if ($sql->execute(array($email))) {
         //         if ($sql->rowCount() > 0) {
@@ -64,10 +55,10 @@
         //             $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
         //             $administrador = 0; // Defina o valor adequado para essa variável
         
-        //             $sql = $pdo->prepare("INSERT INTO cadastro (codigoUser, nome, email, cpf, senha, administrador)
+        //             $sql = $pdo->prepare("INSERT INTO cadastro (codigoUser, name, email, cpf, senha, administrador)
         //                                   VALUES (null, ?, ?, ?, ?, ?)");
         
-        //             if ($sql->execute(array($nome, $email, $cpf, $hashSenha, $administrador))) {
+        //             if ($sql->execute(array($name, $email, $cpf, $hashSenha, $administrador))) {
         //                 $msgErr = "Dados cadastrados com sucesso!";
         //                 header('Location: login.php');
         //                 exit(); // Importante para evitar a execução adicional do código após redirecionar
@@ -132,8 +123,8 @@
 
     <label for="email">Nome Completo:</label>
     <br>
-    <input type="text" name="nome" value="<?php echo $nome?>">
-    <span class="obrigatorio">* <?php echo $nomeErr; ?></span>
+    <input type="text" name="name" value="<?php echo $name?>">
+    <span class="obrigatorio">* <?php echo $nameErr; ?></span>
     <br>
 
     <label for="senha">Email:</label>
@@ -142,21 +133,13 @@
     <span class="obrigatorio">* <?php echo $emailErr; ?></span>
     <br>
 
-    <label for="senha">CPF:</label>
-    <br>
-    <input type="text" name="cpf" value="<?php echo $cpf?>">
-    <span class="obrigatorio">* <?php echo $cpfErr; ?></span>
-    <br>
-
     <label for="senha">Senha:</label>
     <br>
     <input type="password" name="senha" value="<?php echo $senha?>">
     <span class="obrigatorio">* <?php echo $senhaErr; ?></span>
     <br>
     <br>
-    <label for="administrador">Administrador:</label>
-    <input class="adm" type="checkbox" name="administrador">
-    <br><br>
+
     <input class="botao" type="submit" value="Salvar" name="cadastro">
     <span class="obrigatorio"><?php echo $msgErr; ?></span>
     <p>Já uma conta?<a href="login.php">Entre aqui</a></p>

@@ -24,15 +24,13 @@
 
         // Codigo para consultar os dados no Banco de Dados
         // Consulta no banco de dados
-        $sql = $pdo->prepare("SELECT * FROM cadastro 
+        $sql = $pdo->prepare("SELECT * FROM users 
                               WHERE email = ? AND senha = ?");
         if ($sql->execute(array($email,MD5($senha)))){
             $info = $sql->fetchAll(PDO::FETCH_ASSOC); // deve estar o problema aqui
             if (count($info) > 0) { 
                 foreach($info as $key => $values){
-                    $_SESSION['nome'] = $values['nome'];
-                    $_SESSION['administrador'] = $values['administrador'];
-                    
+                    $_SESSION['name'] = $values['name'];                    
                 }
                 header('location:home.php');
             } else {
@@ -46,63 +44,68 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="../img2/favicon.ico" type="image/x-icon">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../CSS/styleLogin.css"> 
-    <link rel="stylesheet" href="../CSS/styleHeader.css">
-    <link rel="stylesheet" href="CSS/styleFooter.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../CSS/styleLogin.css">
+  <link rel="stylesheet" href="../CSS/styleHeader.css">
+  <link rel="stylesheet" href="CSS/styleFooter.css">
 
-    <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- font-family: 'Mulish', sans-serif; -->
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- font-family: 'Mulish', sans-serif; -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- font-family: 'Work Sans', sans-serif; -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- font-family: 'Work Sans', sans-serif; -->
 </head>
 
 <body>
 
-<!-- <?php
+  <!-- <?php
     // require("../templates/headerResto.php");
 ?> -->
 
-    <!-- <div class="container"> -->
-    <form method="POST" action="" class="form">
-        <h1>Login</h1>
+  <!-- <div class="container"> -->
+  <form method="POST" action="" class="form">
+    <h1>Login</h1>
 
-        <label for="email">Email:</label>
-        <br>
-        <input type="text" name="email" value="<?php echo $email?>">
-            <span class="obrigatorio">* <?php echo $emailErr ?></span>
-        <br>
+    <label for="email">Email:</label>
+    <br>
+    <input type="text" name="email" value="<?php echo $email?>">
+    <span class="obrigatorio">* <?php echo $emailErr ?></span>
+    <br>
 
-        <label for="senha">Senha:</label>
-        <br>
-        <input type="password" name="senha" value="<?php echo $senha?>">
-            <span class="obrigatorio">* <?php echo $senhaErr ?></span>
-        <br>
-        <br>
+    <label for="senha">Senha:</label>
+    <br>
+    <input type="password" name="senha" value="<?php echo $senha?>">
+    <span class="obrigatorio">* <?php echo $senhaErr ?></span>
+    <br>
+    <br>
 
-        <input class="botao" type="submit" value="Entrar" name="cadastro">
-        <span class="obrigatorio"><?php echo $msgErr ?></span>
-        <p>Não possui conta?<a href="cadastro.php">Cadastre-se</a></p>
-    </form>
+    <input class="botao" type="submit" value="Entrar" name="cadastro">
+    <span class="obrigatorio"><?php echo $msgErr ?></span>
+    <p>Não possui conta?<a href="cadastro.php">Cadastre-se</a></p>
+  </form>
 
-    <?php
+  <?php
     require("../templates/footer.php");
 ?>
 
 </body>
+
 </html>
