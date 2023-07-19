@@ -1,19 +1,21 @@
+<?php
+session_start();
+$nome = $_SESSION['nome'];
+?>
+
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <title>Página Inicial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
 </head>
+
 <body>
-    <?php
-    session_start();
-    // Verifica se o nome do usuário está armazenado na sessão
-    if (isset($_SESSION['nome'])) {
-        $nomeUsuario = $_SESSION['nome']; // Alterado de $_SESSION['nomeUsuario'] para $_SESSION['nome']
-        echo "<h1>Olá, $nomeUsuario!</h1>";
-    } else {
-      echo 'ERRO';
-    }
-    ?>
-    <!-- Conteúdo adicional da página -->
+    <h1>
+        <?php echo $nome; ?>
+    </h1>
 </body>
+
 </html>
