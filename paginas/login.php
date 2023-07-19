@@ -6,14 +6,14 @@
     $_SESSION['nome'] = "";
     $_SESSION['administrador'] = "";
 
-    $email = $senha = "";
-    $emailErr = $senhaErr = $msgErr = "";
+    $nome = $senha = "";
+    $nomeErr = $senhaErr = $msgErr = "";
 
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
-        if (empty($_POST['email'])){
-            $emailErr = "Email é obrigatório!";
+        if (empty($_POST['nome'])){
+            $nomeErr = "nome é obrigatório!";
         } else {
-            $email = test_input($_POST["email"]);
+            $nome = test_input($_POST["nome"]);
         }
 
         if (empty($_POST['senha'])){
@@ -25,16 +25,16 @@
         // Codigo para consultar os dados no Banco de Dados
         // Consulta no banco de dados
         $sql = $pdo->prepare("SELECT * FROM users 
-                              WHERE email = ? AND senha = ?");
-        if ($sql->execute(array($email,MD5($senha)))){
+                              WHERE nome = ? AND senha = ?");
+        if ($sql->execute(array($nome,MD5($senha)))){
             $info = $sql->fetchAll(PDO::FETCH_ASSOC); // deve estar o problema aqui
             if (count($info) > 0) { 
                 foreach($info as $key => $values){
-                    $_SESSION['name'] = $values['name'];                    
+                    $_SESSION['nome'] = $values['nome'];                    
                 }
-                header('location:home.php');
+                header('location:User.php');
             } else {
-                echo '<h6>Email ou senha não cadastrados</h6>';
+                echo '<h6>nome ou senha não cadastrados</h6>';
             }
         }  
     }
@@ -84,10 +84,10 @@
   <form method="POST" action="" class="form">
     <h1>Login</h1>
 
-    <label for="email">Email:</label>
+    <label for="nome">Nome:</label>
     <br>
-    <input type="text" name="email" value="<?php echo $email?>">
-    <span class="obrigatorio">* <?php echo $emailErr ?></span>
+    <input type="text" name="nome" value="<?php echo $nome?>">
+    <span class="obrigatorio">* <?php echo $nomeErr ?></span>
     <br>
 
     <label for="senha">Senha:</label>
