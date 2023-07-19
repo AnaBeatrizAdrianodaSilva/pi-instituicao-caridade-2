@@ -1,0 +1,19 @@
+
+
+  Depois que fizer login ele vai para a página de ínicio (Home)
+
+  Home?
+	Posts sobre instituições
+
+  Ver Mais
+	Página onde pode procurar instuições 
+
+  User
+	Página onde mostra as suas informações de cadastro e onde fica o botão para adicionar um post
+	Se possível mostrar todos os post já feitos pela conta
+
+  Configurações (Se possível)
+	Trocar de modo escuro para claro
+	Fazer logout 
+	
+	
