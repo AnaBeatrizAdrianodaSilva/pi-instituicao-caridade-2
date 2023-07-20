@@ -83,19 +83,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php echo $nome; ?>
     </h1>
 
-    <h2>All Contents:</h2>
+    <!-- <h2>All Contents:</h2> -->
     <?php if (!empty($contents)) : ?>
         <?php foreach ($contents as $content) : ?>
             <p>
                 <?php echo $content['conteudo']; ?>
                 <?php if (!empty($content['data'])) : ?>
-                    <br>
+                    <br />
                     <span style="color: gray;">(<?php echo $content['data']; ?>)</span>
                 <?php endif; ?>
             </p>
         <?php endforeach; ?>
-    <?php else : ?>
-        <p>No contents found.</p>
     <?php endif; ?>
 
     <form method="post" action="user.php">
