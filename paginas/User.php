@@ -85,13 +85,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <h2>All Contents:</h2>
     <?php if (!empty($contents)) : ?>
-            <?php foreach ($contents as $content) : ?>
-                    <?php echo $content['conteudo']; ?>
-                    <br />
+        <?php foreach ($contents as $content) : ?>
+            <p>
+                <?php echo $content['conteudo']; ?>
+                <?php if (!empty($content['data'])) : ?>
                     <span style="color: gray;">(<?php echo $content['data']; ?>)</span>
-                    <br />
-                    <br />
-            <?php endforeach; ?>
+                <?php endif; ?>
+            </p>
+        <?php endforeach; ?>
     <?php else : ?>
         <p>No contents found.</p>
     <?php endif; ?>
@@ -104,3 +105,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 
 </html>
+
+
