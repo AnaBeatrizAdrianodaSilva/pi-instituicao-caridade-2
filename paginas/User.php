@@ -83,22 +83,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php echo $nome; ?>
     </h1>
 
-    <?php if (isset($recent_post['conteudo'])) : ?>
-        <h2>Recent Content:</h2>
-        <p><?php echo $recent_post['conteudo']; ?></p>
-    <?php endif; ?>
-
     <h2>All Contents:</h2>
     <?php if (!empty($contents)) : ?>
-        <ul>
             <?php foreach ($contents as $content) : ?>
-                <li>
-                    <strong><?php echo $content['nome']; ?>:</strong>
                     <?php echo $content['conteudo']; ?>
+                    <br />
                     <span style="color: gray;">(<?php echo $content['data']; ?>)</span>
-                </li>
+                    <br />
+                    <br />
             <?php endforeach; ?>
-        </ul>
     <?php else : ?>
         <p>No contents found.</p>
     <?php endif; ?>
