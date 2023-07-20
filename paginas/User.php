@@ -89,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>
                 <?php echo $content['conteudo']; ?>
                 <?php if (!empty($content['data'])) : ?>
+                    <br>
                     <span style="color: gray;">(<?php echo $content['data']; ?>)</span>
                 <?php endif; ?>
             </p>
