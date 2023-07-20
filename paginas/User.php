@@ -2,6 +2,26 @@
 session_start();
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 
+// Include your database connection file
+include "../include/MySql.php"; // Update the path if needed
+
+// Fetch all contents posted by the logged-in user from the "posts" table using a JOIN query
+$contents = array();
+try {
+    if (isset($_SESSION['nome'])) {
+        $stmt = $pdo->prepare("SELECT users.nome AS nome, posts.conteudo AS conteudo FROM posts 
+                              INNER JOIN users ON posts.fk_id_users = users.id_users 
+                              WHERE users.nome = :nome ORDER BY posts.id_posts DESC");
+        $stmt->bindParam(':nome', $_SESSION['nome']);
+        $stmt->execute();
+        $contents = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+} catch (PDOException $e) {
+    // Handle any PDO exceptions
+    die("Error: " . $e->getMessage());
+}
+
+// Insert new content into the "posts" table if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if the user is logged in
     if (!isset($_SESSION['nome'])) {
@@ -13,12 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the content from the textarea
     $conteudo = $_POST['conteudo'];
 
-    // Include your database connection file
-    include "../include/MySql.php"; // Update the path if needed
-
     try {
         // Prepare and execute SQL statement to get the user ID from the "users" table
-        $stmt = $pdo->prepare("SELECT id FROM users WHERE nome = :nome");
+        $stmt = $pdo->prepare("SELECT id_users FROM users WHERE nome = :nome");
         $stmt->bindParam(':nome', $nome);
         $stmt->execute();
         $user = $stmt->fetch();
@@ -29,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
         }
 
-        $user_id = $user['id'];
+        $user_id = $user['id_users'];
 
         // Prepare and execute SQL statement to insert data into the "posts" table
         $sql = "INSERT INTO posts (fk_id_users, conteudo) VALUES (:fk_id_users, :conteudo)";
@@ -65,6 +82,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>
         <?php echo $nome; ?>
     </h1>
+
+    <!-- <?php //if (isset($recent_post['conteudo'])) : ?>
+        <h2>Recent Content:</h2>
+        <p><?php //echo $recent_post['conteudo']; ?></p>
+    <?php //endif; ?> -->
+
+    <!-- 
+        AJEITAR DEPOIS O HTML
+     -->
+
+    <h2>All Contents:</h2>
+    <?php if (!empty($contents)) : ?>
+            <?php foreach ($contents as $content) : ?>
+                    <!-- <strong><?php echo $content['nome']; ?>:</strong> -->
+                    <?php echo $content['conteudo']; ?>
+                    <br />
+            <?php endforeach; ?>
+    <?php else : ?>
+        <p>No contents found.</p>
+    <?php endif; ?>
 
     <form method="post" action="user.php">
         <textarea name="conteudo" rows="5" cols="40"></textarea>

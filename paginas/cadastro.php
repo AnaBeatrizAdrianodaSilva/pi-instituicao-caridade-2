@@ -30,7 +30,7 @@
                 if ($sql -> rowCount() > 0){
                     $msgErr = "Usuário já cadastrado!";
                 }else{
-                    $sql = $pdo-> prepare("INSERT INTO users (id, nome, email, senha)
+                    $sql = $pdo-> prepare("INSERT INTO users (id_users, nome, email, senha)
                                           values (null, ?,?,?)");
                     if ($sql -> execute(array($name, $email, md5($senha)))){
                         $msgErr = "Dados cadastrados com sucesso!";
@@ -45,35 +45,6 @@
         }else{
             $msgErr = "Dados não cadastrados!";
         }
-
-        // if ($email && $name && $cpf && $senha) {
-        //     $sql = $pdo->prepare("SELECT * FROM cadastro WHERE email = ?");
-        //     if ($sql->execute(array($email))) {
-        //         if ($sql->rowCount() > 0) {
-        //             $msgErr = "Usuário já cadastrado!";
-        //         } else {
-        //             $hashSenha = password_hash($senha, PASSWORD_DEFAULT);
-        //             $administrador = 0; // Defina o valor adequado para essa variável
-        
-        //             $sql = $pdo->prepare("INSERT INTO cadastro (codigoUser, name, email, cpf, senha, administrador)
-        //                                   VALUES (null, ?, ?, ?, ?, ?)");
-        
-        //             if ($sql->execute(array($name, $email, $cpf, $hashSenha, $administrador))) {
-        //                 $msgErr = "Dados cadastrados com sucesso!";
-        //                 header('Location: login.php');
-        //                 exit(); // Importante para evitar a execução adicional do código após redirecionar
-        //             } else {
-        //                 $msgErr = "Dados não cadastrados!";
-        //             }
-        //         }
-        //     } else {
-        //         $msgErr = "Erro no comando SELECT";
-        //     }
-        // } else {
-        //     $msgErr = "Dados não cadastrados!";
-        // }
-        
-
     }
 ?>
 
