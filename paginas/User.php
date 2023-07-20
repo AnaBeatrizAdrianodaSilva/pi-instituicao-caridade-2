@@ -9,7 +9,7 @@ include "../include/MySql.php"; // Update the path if needed
 $contents = array();
 try {
     if (isset($_SESSION['nome'])) {
-        $stmt = $pdo->prepare("SELECT users.nome AS nome, posts.conteudo AS conteudo FROM posts 
+        $stmt = $pdo->prepare("SELECT users.nome AS nome, posts.conteudo AS conteudo, posts.data AS data FROM posts 
                               INNER JOIN users ON posts.fk_id_users = users.id_users 
                               WHERE users.nome = :nome ORDER BY posts.id_posts DESC");
         $stmt->bindParam(':nome', $_SESSION['nome']);
@@ -48,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $user_id = $user['id_users'];
 
-        // Prepare and execute SQL statement to insert data into the "posts" table
-        $sql = "INSERT INTO posts (fk_id_users, conteudo) VALUES (:fk_id_users, :conteudo)";
+        // Prepare and execute SQL statement to insert data into the "posts" table with the current timestamp
+        $sql = "INSERT INTO posts (fk_id_users, conteudo, data) VALUES (:fk_id_users, :conteudo, NOW())";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':fk_id_users', $user_id);
         $stmt->bindParam(':conteudo', $conteudo);
@@ -83,22 +83,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php echo $nome; ?>
     </h1>
 
-    <!-- <?php //if (isset($recent_post['conteudo'])) : ?>
+    <?php if (isset($recent_post['conteudo'])) : ?>
         <h2>Recent Content:</h2>
-        <p><?php //echo $recent_post['conteudo']; ?></p>
-    <?php //endif; ?> -->
-
-    <!-- 
-        AJEITAR DEPOIS O HTML
-     -->
+        <p><?php echo $recent_post['conteudo']; ?></p>
+    <?php endif; ?>
 
     <h2>All Contents:</h2>
     <?php if (!empty($contents)) : ?>
+        <ul>
             <?php foreach ($contents as $content) : ?>
-                    <!-- <strong><?php echo $content['nome']; ?>:</strong> -->
+                <li>
+                    <strong><?php echo $content['nome']; ?>:</strong>
                     <?php echo $content['conteudo']; ?>
-                    <br />
+                    <span style="color: gray;">(<?php echo $content['data']; ?>)</span>
+                </li>
             <?php endforeach; ?>
+        </ul>
     <?php else : ?>
         <p>No contents found.</p>
     <?php endif; ?>
