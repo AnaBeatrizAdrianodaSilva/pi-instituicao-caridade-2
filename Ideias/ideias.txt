@@ -17,3 +17,9 @@
 	Fazer logout 
 	
 	
+
+
+=======================================================================
+
+Um usuário pode ter vários posts, mas um posts não pode ter mais de um usuário
+		Usuário (1,1) - posts (0,n) -> 1:N -> 1 para N
