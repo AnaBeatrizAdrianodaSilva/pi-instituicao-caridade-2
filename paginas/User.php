@@ -1,9 +1,36 @@
 <?php
 session_start();
+
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : "";
 
 // Include your database connection file
 include "../include/MySql.php"; // Atualize o caminho, se necessário
+
+// Configurações do OAuth2
+require '../vendor/autoload.php';
+
+$client = new Google_Client();
+$client->setClientId('976744990343-n0cqrpppkmhks8ta6dc2i2tq1vdr52mi.apps.googleusercontent.com');
+$client->setClientSecret('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');
+$client->setRedirectUri('http://seu-dominio.com/paginas/user.php');
+$client->setAuthConfig('../config/credentials.json');
+$client->addScope(Google_Service_Drive::DRIVE_FILE);
+
+// Verifica se o usuário já está autenticado ou redireciona para a tela de autenticação
+if (!isset($_SESSION['access_token']) && isset($_GET['code'])) {
+    $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $_SESSION['access_token'] = $token;
+} elseif (!isset($_SESSION['access_token'])) {
+    $authUrl = $client->createAuthUrl();
+    header("Location: $authUrl");
+    exit;
+}
+
+// Configura o cliente com o token de acesso
+$client->setAccessToken($_SESSION['access_token']);
+
+// Cria um serviço do Google Drive
+$driveService = new Google_Service_Drive($client);
 
 // Fetch all contents posted by the logged-in user from the "posts" table using a JOIN query
 $contents = array();
@@ -33,34 +60,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the content from the textarea
     $conteudo = $_POST['conteudo'];
 
-    // Get the user ID from the session (replace 'id_do_usuario' with the actual session variable name for user ID)
-    $user_id = $_SESSION['id_do_usuario'];
+    // Get the user ID from the session (replace 'id_users' with the actual session variable name for user ID)
+    $user_id = $_SESSION['id_users'];
 
     // Check if an image was uploaded
-    $id_imagens = null; // Initialize with null to handle posts without images
-    $nome_imagem = null; // Initialize with null to handle posts without images
+    $file_id = null; // Initialize with null to handle posts without files
     if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
-        // Primeiro, salve a imagem na tabela "imagens" e obtenha o ID da imagem inserida
+        // Upload the image to Google Drive
         $imagem = $_FILES['imagem'];
+        $nome_imagem = $imagem['name'];
         $nome_temporario_imagem = $imagem['tmp_name'];
 
-        // Lendo a imagem como uma representação binária (bytes)
-        $imagem_binaria = file_get_contents($nome_temporario_imagem);
-
-        // Obtendo o nome original da imagem
-        $nome_imagem = $imagem['name'];
+        // Crie um novo objeto de metadados para o arquivo no Google Drive
+        $fileMetadata = new Google_Service_Drive_DriveFile([
+            'name' => $nome_imagem,
+        ]);
 
         try {
-            $stmt = $pdo->prepare("INSERT INTO imagens (nome, imagem) VALUES (:nome, :imagem)");
-            $stmt->bindParam(':nome', $nome_imagem);
-            $stmt->bindParam(':imagem', $imagem_binaria, PDO::PARAM_LOB);
-            $stmt->execute();
+            // Envie o arquivo para o Google Drive
+            $file = $driveService->files->create($fileMetadata, [
+                'data' => file_get_contents($nome_temporario_imagem),
+                'uploadType' => 'multipart',
+                'fields' => 'id',
+            ]);
 
-            // Obtendo o ID da imagem recém-inserida
-            $id_imagens = $pdo->lastInsertId();
-        } catch (PDOException $e) {
-            echo "Erro ao salvar a imagem no banco de dados.";
-            exit;
+            // Obtenha o ID do arquivo recém-carregado no Google Drive
+            $file_id = $file->id;
+        } catch (Exception $e) {
+            // Trate qualquer exceção que ocorra durante o envio do arquivo para o Google Drive
+            echo "Erro ao enviar a imagem para o Google Drive.";
         }
     }
 
@@ -70,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':fk_id_users', $user_id);
         $stmt->bindParam(':conteudo', $conteudo);
-        $stmt->bindParam(':fk_id_imagens', $id_imagens, PDO::PARAM_INT); // Use PDO::PARAM_INT for integer values
+        $stmt->bindParam(':fk_id_imagens', $file_id); // Save the Google Drive file ID instead of the ID
         $stmt->execute();
 
         // Data saved successfully, redirect back to the same page to avoid form resubmission
@@ -104,19 +132,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <br>
                     <span style="color: gray;"><?php echo $content['data']; ?></span>
                 <?php endif; ?>
-                <?php if (!empty($content['id_imagens'])) : ?>
+                <?php if (!empty($content['fk_id_imagens'])) : ?>
                     <?php
-                    // Obter a imagem do banco de dados com base no id_imagens associado ao post
+                    // Obter a imagem do Google Drive com base no file_id associado ao post
                     try {
-                        $stmt = $pdo->prepare("SELECT imagem FROM imagens WHERE id_imagens = :id_imagens");
-                        $stmt->bindParam(':id_imagens', $content['id_imagens']);
-                        $stmt->execute();
-                        $imagem = $stmt->fetch();
-
+                        $file = $driveService->files->get($content['fk_id_imagens']);
+                        $contentLink = $file->webViewLink;
                         // Exibir a imagem
-                        echo '<br><img src="data:image/jpeg;base64,' . base64_encode($imagem['imagem']) . '" alt="Imagem do post">';
-                    } catch (PDOException $e) {
-                        echo "Erro ao obter a imagem do banco de dados.";
+                        echo '<br><img src="' . $contentLink . '" alt="Imagem do post">';
+                    } catch (Exception $e) {
+                        echo "Erro ao obter a imagem do Google Drive.";
                     }
                     ?>
                 <?php endif; ?>
